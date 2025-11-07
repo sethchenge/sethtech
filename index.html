@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional IT services including OS installation (Linux, Ubuntu, Windows), troubleshooting, and technical support by Seth Chenge">
+    <meta name="keywords" content="IT services, OS installation, Linux, Ubuntu, Windows, troubleshooting, technical support, computer repair">
+    <meta name="author" content="Seth Chenge">
+    <meta property="og:title" content="Seth Chenge - IT Services Professional">
+    <meta property="og:description" content="Expert IT solutions for OS installation, troubleshooting, and technical support">
+    <meta property="og:type" content="website">
+    <title>Seth Chenge - IT Services | OS Installation & Technical Support</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="SethAI.css">
+</head>
+<body>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a class="navbar-brand" href="index.html">
+                <span class="material-icons align-middle">computer</span>
+                <span class="brand-text">Seth Chenge</span>
+            </a>
+            <button class="sidebar-close" id="sidebarClose">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">
+                    <span class="material-icons">home</span>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="services.html">
+                    <span class="material-icons">build</span>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="staff.html">
+                    <span class="material-icons">group</span>
+                    <span>Staff</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">
+                    <span class="material-icons">contact_mail</span>
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cv.html">
+                    <span class="material-icons">description</span>
+                    <span>CV</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Top Navigation Bar (Desktop) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <!-- Mobile Menu Toggle -->
+            <button class="navbar-toggler sidebar-toggle" type="button" id="sidebarToggle">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <a class="navbar-brand" href="index.html">
+                <span class="material-icons align-middle">computer</span>
+                <span class="brand-text">Seth Chenge</span>
+            </a>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <span class="material-icons">home</span>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">
+                            <span class="material-icons">build</span>
+                            Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="staff.html">
+                            <span class="material-icons">group</span>
+                            Staff
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <span class="material-icons">contact_mail</span>
+                            Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv.html">
+                            <span class="material-icons">description</span>
+                            CV
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-4 fw-bold mb-4 fade-in">
+                        Professional IT Services
+                        <span class="highlight">at Your Fingertips</span>
+                    </h1>
+                    <p class="lead mb-4 fade-in-delay">
+                        Expert solutions for OS installation, system troubleshooting, and comprehensive technical support. Let's bring your technology to life!
+                    </p>
+                    <div class="hero-buttons fade-in-delay-2">
+                        <a href="services.html" class="btn btn-primary btn-lg me-3">
+                            <span class="material-icons align-middle">explore</span>
+                            Explore Services
+                        </a>
+                        <a href="contact.html" class="btn btn-outline-primary btn-lg">
+                            <span class="material-icons align-middle">email</span>
+                            Get in Touch
+                        </a>
+                    </div>
+                    <div class="hero-stats mt-5 fade-in-delay-3">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3 class="counter" data-target="500">0</h3>
+                                    <p>Projects Done</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3 class="counter" data-target="50">0</h3>
+                                    <p>Happy Clients</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3 class="counter" data-target="5">0</h3>
+                                    <p>Years Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-illustration">
+                        <img src="https://cdn-icons-png.flaticon.com/512/6295/6295417.png" alt="IT Services Illustration" class="img-fluid floating">
+                        <div class="tech-icons">
+                            <div class="tech-icon tech-icon-1">
+                                <img src="https://cdn-icons-png.flaticon.com/512/6124/6124995.png" alt="Linux" class="rotating">
+                            </div>
+                            <div class="tech-icon tech-icon-2">
+                                <img src="https://cdn-icons-png.flaticon.com/512/888/888882.png" alt="Windows" class="rotating">
+                            </div>
+                            <div class="tech-icon tech-icon-3">
+                                <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Ubuntu" class="rotating">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="material-icons">expand_more</span>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section id="services-preview" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">What I Offer</h2>
+                <p class="section-subtitle">Comprehensive IT solutions tailored to your needs</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <span class="material-icons">download</span>
+                        </div>
+                        <h4>OS Installation</h4>
+                        <p>Expert installation of Linux, Ubuntu, Windows, and other operating systems</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <span class="material-icons">build_circle</span>
+                        </div>
+                        <h4>Troubleshooting</h4>
+                        <p>Fast and efficient problem diagnosis and resolution for all your IT issues</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <span class="material-icons">support_agent</span>
+                        </div>
+                        <h4>Technical Support</h4>
+                        <p>Ongoing support and maintenance to keep your systems running smoothly</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="services.html" class="btn btn-primary btn-lg">
+                    View All Services
+                    <span class="material-icons align-middle">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">
+                        <span class="material-icons align-middle">computer</span>
+                        Seth Chenge IT Services
+                    </h5>
+                    <p>Professional IT solutions for businesses and individuals. Your technology partner for success.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="staff.html">Staff</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="cv.html">CV</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Connect With Me</h5>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/17JafkpZ9f/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/seth-chenge-248675322" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">
+                    Made with <span class="material-icons text-danger align-middle">favorite</span> by <strong>Seth Chenge</strong>
+                </p>
+                <p class="mt-2 text-muted">&copy; 2025 Seth Chenge IT Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <!-- SethAI Chat Interface -->
+<div id="sethAI-container">
+    <!-- Floating Button -->
+    <div id="sethAI-button" draggable="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Ask SethAI</span>
+    </div>
+
+    <!-- Chat Window -->
+    <div id="sethAI-chat" class="sethAI-hidden">
+        <div class="sethAI-header">
+            <div class="sethAI-header-info">
+                <div class="sethAI-avatar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3>SethAI Assistant</h3>
+                    <p class="sethAI-status">
+                        <span class="sethAI-status-dot"></span>
+                        Online
+                    </p>
+                </div>
+            </div>
+            <button id="sethAI-close" class="sethAI-close-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div id="sethAI-messages" class="sethAI-messages">
+            <div class="sethAI-message sethAI-bot">
+                <div class="sethAI-message-avatar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="sethAI-message-content">
+                    <p>👋 Hello! I'm SethAI, your virtual assistant for Seth Chenge IT Services. I can help you with:</p>
+                    <ul>
+                        <li>Information about our services</li>
+                        <li>Details about our team members</li>
+                        <li>Company history and background</li>
+                        <li>Contact information</li>
+                        <li>General IT questions</li>
+                    </ul>
+                    <p>How can I assist you today?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sethAI-suggestions" id="sethAI-suggestions">
+            <button class="sethAI-suggestion-btn" data-suggestion="What services do you offer?">What services do you offer?</button>
+            <button class="sethAI-suggestion-btn" data-suggestion="Tell me about your team">Tell me about your team</button>
+            <button class="sethAI-suggestion-btn" data-suggestion="How can I contact you?">How can I contact you?</button>
+        </div>
+
+        <div class="sethAI-input-container">
+            <input 
+                type="text" 
+                id="sethAI-input" 
+                placeholder="Ask me anything about our services..."
+                autocomplete="off"
+            />
+            <button id="sethAI-send" class="sethAI-send-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+    <script src="SethAI.js"></script>
+</body>
+</html>

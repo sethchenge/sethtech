@@ -1,0 +1,82 @@
+<!-- SethAI Chat Interface -->
+<div id="sethAI-container">
+    <!-- Floating Button -->
+    <div id="sethAI-button" draggable="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Ask SethAI</span>
+    </div>
+
+    <!-- Chat Window -->
+    <div id="sethAI-chat" class="sethAI-hidden">
+        <div class="sethAI-header">
+            <div class="sethAI-header-info">
+                <div class="sethAI-avatar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3>SethAI Assistant</h3>
+                    <p class="sethAI-status">
+                        <span class="sethAI-status-dot"></span>
+                        Online
+                    </p>
+                </div>
+            </div>
+            <button id="sethAI-close" class="sethAI-close-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div id="sethAI-messages" class="sethAI-messages">
+            <div class="sethAI-message sethAI-bot">
+                <div class="sethAI-message-avatar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="sethAI-message-content">
+                    <p>👋 Hello! I'm SethAI, your virtual assistant for Seth Chenge IT Services. I can help you with:</p>
+                    <ul>
+                        <li>Information about our services</li>
+                        <li>Details about our team members</li>
+                        <li>Company history and background</li>
+                        <li>Contact information</li>
+                        <li>General IT questions</li>
+                    </ul>
+                    <p>How can I assist you today?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sethAI-suggestions" id="sethAI-suggestions">
+            <button class="sethAI-suggestion-btn" data-suggestion="What services do you offer?">What services do you offer?</button>
+            <button class="sethAI-suggestion-btn" data-suggestion="Tell me about your team">Tell me about your team</button>
+            <button class="sethAI-suggestion-btn" data-suggestion="How can I contact you?">How can I contact you?</button>
+        </div>
+
+        <div class="sethAI-input-container">
+            <input 
+                type="text" 
+                id="sethAI-input" 
+                placeholder="Ask me anything about our services..."
+                autocomplete="off"
+            />
+            <button id="sethAI-send" class="sethAI-send-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>

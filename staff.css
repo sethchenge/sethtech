@@ -1,0 +1,593 @@
+/* Staff Page Specific Styles */
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, #1e90ff 0%, #ffffff 100%);
+    padding: 120px 0 80px;
+    margin-top: 60px;
+    color: white;
+}
+
+.page-header h1 {
+    color: white;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-header .lead {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.2rem;
+}
+
+.header-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* CEO Section */
+.ceo-section {
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e90ff;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.ceo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.ceo-image-wrapper {
+    text-align: center;
+}
+
+.ceo-image-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.ceo-image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid #1e90ff;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.ceo-image:hover {
+    transform: scale(1.05);
+}
+
+.verified-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.verified-badge .material-icons {
+    color: white;
+    font-size: 30px;
+}
+
+.ceo-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e90ff;
+    margin-bottom: 10px;
+}
+
+.ceo-title {
+    font-size: 1.1rem;
+    color: #6c757d;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.ceo-badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ceo-badges .badge {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+}
+
+/* CEO Story */
+.ceo-story {
+    padding: 0 20px;
+}
+
+.story-header h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e90ff;
+}
+
+.story-content p {
+    line-height: 1.8;
+    color: #495057;
+    margin-bottom: 15px;
+}
+
+/* Milestones */
+.milestones {
+    margin-top: 30px;
+}
+
+.milestone-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #1e90ff;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.milestone-card:hover {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.milestone-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.milestone-icon .material-icons {
+    color: white;
+    font-size: 24px;
+}
+
+.milestone-card h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e90ff;
+    margin-bottom: 10px;
+}
+
+.milestone-card p {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* Contact Info */
+.contact-info {
+    background: linear-gradient(135deg, rgba(30, 144, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #1e90ff;
+}
+
+.contact-info h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e90ff;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.contact-item .material-icons {
+    color: #1e90ff;
+    font-size: 24px;
+}
+
+.contact-item a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #0056b3;
+}
+
+/* Team Members Section */
+.team-section {
+    position: relative;
+}
+
+.team-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(30, 144, 255, 0.2);
+}
+
+.team-card-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 30px;
+    text-align: center;
+    border-bottom: 3px solid #1e90ff;
+}
+
+.member-avatar {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.avatar-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.verified-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+}
+
+.verified-icon .material-icons {
+    color: white;
+    font-size: 20px;
+}
+
+.member-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    font-size: 1.1rem;
+    color: #1e90ff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.member-badges {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.member-badges .badge {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-radius: 15px;
+}
+
+.team-card-body {
+    padding: 30px;
+}
+
+.member-bio {
+    color: #495057;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.specializations {
+    margin-bottom: 25px;
+}
+
+.specializations h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e90ff;
+    margin-bottom: 15px;
+}
+
+.specializations ul {
+    list-style: none;
+    padding: 0;
+}
+
+.specializations ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    color: #495057;
+    font-size: 0.95rem;
+}
+
+.specializations ul li .material-icons {
+    color: #1e90ff;
+    font-size: 20px;
+}
+
+.achievements {
+    background: linear-gradient(135deg, rgba(30, 144, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #1e90ff;
+}
+
+.achievements h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e90ff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.achievements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievements ul li {
+    color: #495057;
+    padding: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Values Section */
+.values-section {
+    position: relative;
+}
+
+.value-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(30, 144, 255, 0.2);
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.3);
+}
+
+.value-icon .material-icons {
+    color: white;
+    font-size: 40px;
+}
+
+.value-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e90ff;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .page-header {
+        padding: 100px 0 60px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .header-stats {
+        gap: 20px;
+    }
+    
+    .stat-divider {
+        display: none;
+    }
+    
+    .ceo-container {
+        padding: 30px 20px;
+    }
+    
+    .ceo-image {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header .lead {
+        font-size: 1rem;
+    }
+    
+    .header-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .ceo-container {
+        padding: 20px;
+    }
+    
+    .ceo-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .ceo-name {
+        font-size: 1.5rem;
+    }
+    
+    .ceo-story {
+        padding: 0;
+        margin-top: 30px;
+    }
+    
+    .milestone-card {
+        margin-bottom: 15px;
+    }
+    
+    .value-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .value-icon .material-icons {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 575px) {
+    .ceo-badges {
+        flex-direction: column;
+    }
+    
+    .ceo-badges .badge {
+        width: 100%;
+    }
+    
+    .member-badges {
+        flex-direction: column;
+    }
+    
+    .member-badges .badge {
+        width: 100%;
+    }
+}
