@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftsyncAI Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="swiftai.css">
+</head>
+<body>
+    <!-- Chat Window -->
+    <div id="swiftsyncAI-window" class="ai-window">
+        <div class="ai-header">
+            <div class="ai-header-left">
+                <div class="ai-avatar">
+                    <span class="material-icons">smart_toy</span>
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="ai-info">
+                    <h3>SwiftsyncAI</h3>
+                    <span class="ai-status">Online • Ready to assist</span>
+                </div>
+            </div>
+            <div class="ai-header-right">
+                <button class="header-btn minimize-btn" id="minimizeBtn">
+                    <span class="material-icons">remove</span>
+                </button>
+                <button class="header-btn close-btn" id="closeBtn">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="ai-chat-container" id="chatContainer">
+            <div class="welcome-message">
+                <div class="welcome-icon">
+                    <span class="material-icons">bolt</span>
+                </div>
+                <h2>Welcome to <span class="text-gradient">SwiftsyncAI</span></h2>
+                <p>Your intelligent IT consultation assistant. Ask me anything about our services, team, or technical solutions.</p>
+                
+                <div class="quick-actions">
+                    <button class="quick-btn" data-query="What services does Swiftsync offer?">
+                        <span class="material-icons">hub</span>
+                        Our Services
+                    </button>
+                    <button class="quick-btn" data-query="Tell me about the Swiftsync team">
+                        <span class="material-icons">groups</span>
+                        Meet the Team
+                    </button>
+                    <button class="quick-btn" data-query="How can I get started with Swiftsync?">
+                        <span class="material-icons">rocket_launch</span>
+                        Get Started
+                    </button>
+                    <button class="quick-btn" data-query="What technologies do you work with?">
+                        <span class="material-icons">settings</span>
+                        Tech Stack
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-input-container">
+            <div class="typing-indicator" id="typingIndicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <form id="chatForm" class="ai-input-form">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    class="ai-input" 
+                    placeholder="Ask me anything about Swiftsync..."
+                    autocomplete="off"
+                >
+                <button type="submit" class="send-btn" id="sendBtn">
+                    <span class="material-icons">send</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Button -->
+    <div id="swiftsyncAI-button" class="ai-float">
+        <div class="ai-pulse"></div>
+        <span class="material-icons">smart_toy</span>
+        <span class="ai-text">Swiftsync AI</span>
+    </div>
+
+    <script src="SwiftsyncAI.js"></script>
+</body>
+</html>

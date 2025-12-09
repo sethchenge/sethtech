@@ -3,541 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comprehensive IT services including OS installation, troubleshooting, network setup, and technical support by Seth Chenge">
-    <meta name="keywords" content="IT services, OS installation, Linux, Ubuntu, Windows, troubleshooting, technical support, computer repair, network setup">
-    <meta name="author" content="Seth Chenge">
-    <title>Services - Seth Chenge IT Services</title>
+    <meta name="description" content="Swiftsync Services - OS Architecture, Cybersecurity, Cloud Integration, and Data Recovery.">
+    <meta name="theme-color" content="#0a0a0a">
     
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Services | Swiftsync</title>
     
-    <!-- Google Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="services.css">
-    <link rel="stylesheet" href="SethAI.css">
-      <!-- Standard favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <!-- PNG format (recommended for modern browsers) -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- Apple Touch Icon (for iOS devices) -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <!-- Android/Chrome -->
-  <link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-    <!-- Sidebar Overlay -->
+<body class="dark-theme">
+
+    <div class="loader-wrapper">
+        <div class="loader-content">
+            <h2 class="loader-text">INITIALIZING...</h2>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <canvas id="neuron-canvas"></canvas>
+
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Sidebar Navigation -->
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <a class="navbar-brand" href="index.html">
-                <span class="material-icons align-middle">computer</span>
-                <span class="brand-text">Seth Chenge</span>
+                <img src="logo.jpg" alt="Swiftsync Logo" class="brand-logo">
+                <span class="brand-text">Swiftsync</span>
             </a>
             <button class="sidebar-close" id="sidebarClose">
                 <span class="material-icons">close</span>
             </button>
         </div>
         <ul class="sidebar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <span class="material-icons">home</span>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="services.html">
-                    <span class="material-icons">build</span>
-                    <span>Services</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="staff.html">
-                    <span class="material-icons">group</span>
-                    <span>Staff</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.html">
-                    <span class="material-icons">contact_mail</span>
-                    <span>Contact</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="cv.html">
-                    <span class="material-icons">description</span>
-                    <span>CV</span>
-                </a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html"><span class="material-icons">home</span> Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="services.html"><span class="material-icons">hub</span> Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="staff.html"><span class="material-icons">groups</span> Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html"><span class="material-icons">contact_mail</span> Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="cv.html"><span class="material-icons">description</span> CV</a></li>
         </ul>
     </nav>
 
-    <!-- Top Navigation Bar (Desktop) -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <!-- Mobile Menu Toggle -->
             <button class="navbar-toggler sidebar-toggle" type="button" id="sidebarToggle">
-                <span class="navbar-toggler-icon"></span>
+                <span class="material-icons">menu</span>
             </button>
             
             <a class="navbar-brand" href="index.html">
-                <span class="material-icons align-middle">computer</span>
-                <span class="brand-text">Seth Chenge</span>
+                <img src="logo.jpg" alt="Swiftsync Logo" class="brand-logo">
+                <span class="brand-text">Swiftsync</span>
             </a>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <span class="material-icons">home</span>
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="services.html">
-                            <span class="material-icons">build</span>
-                            Services
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="staff.html">
-                            <span class="material-icons">group</span>
-                            Staff
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            <span class="material-icons">contact_mail</span>
-                            Contact
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cv.html">
-                            <span class="material-icons">description</span>
-                            CV
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="staff.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn-glow" href="contact.html">Get Quote</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <section class="services-hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold mb-3">Our Services</h1>
-                    <p class="lead">Comprehensive IT solutions designed to meet all your technology needs</p>
+                <div class="col-lg-6 hero-text fade-in-up">
+                    <span class="section-tag">Capabilities</span>
+                    <h1 class="display-3 fw-bold">
+                        Engineering <br>
+                        <span class="text-gradient">Digital Perfection</span>
+                    </h1>
+                    <p class="lead mt-3 text-visible">
+                        From enterprise OS architecture to military-grade data recovery. We build the infrastructure that powers your ambition.
+                    </p>
                 </div>
-                <div class="col-lg-4 text-end">
-                    <span class="material-icons header-icon">build_circle</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Services Section -->
-    <section class="services-section py-5">
-        <div class="container">
-            <!-- Operating System Installation -->
-            <div class="service-detail-card mb-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 order-lg-1 order-2">
-                        <div class="service-content">
-                            <div class="service-badge">
-                                <span class="material-icons">download</span>
-                            </div>
-                            <h2 class="service-title">Operating System Installation</h2>
-                            <p class="service-description">Professional installation and configuration of various operating systems tailored to your specific needs and hardware requirements.</p>
-                            <ul class="service-features">
-                                <li><span class="material-icons">check_circle</span> Windows 10 & 11 Installation</li>
-                                <li><span class="material-icons">check_circle</span> Linux Distributions (Ubuntu, Fedora, Debian, Mint)</li>
-                                <li><span class="material-icons">check_circle</span> Dual Boot Configuration</li>
-                                <li><span class="material-icons">check_circle</span> Driver Installation & Updates</li>
-                                <li><span class="material-icons">check_circle</span> System Optimization</li>
-                                <li><span class="material-icons">check_circle</span> Data Migration & Backup</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary mt-3">
-                                Request Service
-                                <span class="material-icons align-middle">arrow_forward</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
-                        <div class="service-image">
-                            <img src="https://cdn-icons-png.flaticon.com/512/4230/4230573.png" alt="OS Installation" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Troubleshooting & Repairs -->
-            <div class="service-detail-card mb-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="service-image">
-                            <img src="https://cdn-icons-png.flaticon.com/512/4341/4341139.png" alt="Troubleshooting" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="service-content">
-                            <div class="service-badge">
-                                <span class="material-icons">build_circle</span>
-                            </div>
-                            <h2 class="service-title">Troubleshooting & Repairs</h2>
-                            <p class="service-description">Expert diagnosis and resolution of hardware and software issues to get your systems back up and running quickly.</p>
-                            <ul class="service-features">
-                                <li><span class="material-icons">check_circle</span> System Performance Issues</li>
-                                <li><span class="material-icons">check_circle</span> Blue Screen Errors (BSOD)</li>
-                                <li><span class="material-icons">check_circle</span> Boot Problems & Recovery</li>
-                                <li><span class="material-icons">check_circle</span> Virus & Malware Removal</li>
-                                <li><span class="material-icons">check_circle</span> Hardware Diagnostics</li>
-                                <li><span class="material-icons">check_circle</span> Software Conflicts Resolution</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary mt-3">
-                                Get Help Now
-                                <span class="material-icons align-middle">arrow_forward</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Technical Support -->
-            <div class="service-detail-card mb-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 order-lg-1 order-2">
-                        <div class="service-content">
-                            <div class="service-badge">
-                                <span class="material-icons">support_agent</span>
-                            </div>
-                            <h2 class="service-title">Technical Support & Maintenance</h2>
-                            <p class="service-description">Ongoing support and preventive maintenance to ensure your technology infrastructure runs smoothly and efficiently.</p>
-                            <ul class="service-features">
-                                <li><span class="material-icons">check_circle</span> Remote & On-site Support</li>
-                                <li><span class="material-icons">check_circle</span> Regular System Updates</li>
-                                <li><span class="material-icons">check_circle</span> Performance Monitoring</li>
-                                <li><span class="material-icons">check_circle</span> Security Patches & Updates</li>
-                                <li><span class="material-icons">check_circle</span> Software Installation & Configuration</li>
-                                <li><span class="material-icons">check_circle</span> User Training & Consultation</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary mt-3">
-                                Get Support
-                                <span class="material-icons align-middle">arrow_forward</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
-                        <div class="service-image">
-                            <img src="https://cdn-icons-png.flaticon.com/512/4149/4149678.png" alt="Technical Support" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Network Setup & Configuration -->
-            <div class="service-detail-card mb-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="service-image">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Network Setup" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="service-content">
-                            <div class="service-badge">
-                                <span class="material-icons">router</span>
-                            </div>
-                            <h2 class="service-title">Network Setup & Configuration</h2>
-                            <p class="service-description">Professional network design, setup, and configuration for homes and small businesses to ensure secure and reliable connectivity.</p>
-                            <ul class="service-features">
-                                <li><span class="material-icons">check_circle</span> Wireless Network Setup</li>
-                                <li><span class="material-icons">check_circle</span> Router Configuration</li>
-                                <li><span class="material-icons">check_circle</span> Network Security Setup</li>
-                                <li><span class="material-icons">check_circle</span> File Sharing Configuration</li>
-                                <li><span class="material-icons">check_circle</span> VPN Setup</li>
-                                <li><span class="material-icons">check_circle</span> Network Troubleshooting</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary mt-3">
-                                Setup Network
-                                <span class="material-icons align-middle">arrow_forward</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Recovery & Backup -->
-            <div class="service-detail-card mb-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 order-lg-1 order-2">
-                        <div class="service-content">
-                            <div class="service-badge">
-                                <span class="material-icons">backup</span>
-                            </div>
-                            <h2 class="service-title">Data Recovery & Backup Solutions</h2>
-                            <p class="service-description">Protect your valuable data with comprehensive backup solutions and expert data recovery services when disasters strike.</p>
-                            <ul class="service-features">
-                                <li><span class="material-icons">check_circle</span> Hard Drive Data Recovery</li>
-                                <li><span class="material-icons">check_circle</span> Deleted File Recovery</li>
-                                <li><span class="material-icons">check_circle</span> Automated Backup Setup</li>
-                                <li><span class="material-icons">check_circle</span> Cloud Backup Configuration</li>
-                                <li><span class="material-icons">check_circle</span> Disaster Recovery Planning</li>
-                                <li><span class="material-icons">check_circle</span> Data Migration Services</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary mt-3">
-                                Protect Your Data
-                                <span class="material-icons align-middle">arrow_forward</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
-                        <div class="service-image">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Data Recovery" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hardware Upgrades -->
-            <div class="service-detail-card">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="service-image">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2920/2920243.png" alt="Hardware Upgrades" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="service-content">
-                            <div class="service-badge">
-                                <span class="material-icons">memory</span>
-                            </div>
-                            <h2 class="service-title">Hardware Upgrades & Installation</h2>
-                            <p class="service-description">Boost your system's performance with professional hardware upgrades and installation services tailored to your needs and budget.</p>
-                            <ul class="service-features">
-                                <li><span class="material-icons">check_circle</span> RAM Upgrades</li>
-                                <li><span class="material-icons">check_circle</span> SSD Installation</li>
-                                <li><span class="material-icons">check_circle</span> Graphics Card Upgrades</li>
-                                <li><span class="material-icons">check_circle</span> Hardware Compatibility Check</li>
-                                <li><span class="material-icons">check_circle</span> Component Installation</li>
-                                <li><span class="material-icons">check_circle</span> System Performance Testing</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary mt-3">
-                                Upgrade Now
-                                <span class="material-icons align-middle">arrow_forward</span>
-                            </a>
-                        </div>
+                <div class="col-lg-6 hero-visual text-center fade-in-up delay-200">
+                    <div class="hologram-container">
+                        <i class="material-icons hologram-icon">layers</i>
+                        <div class="hologram-ring"></div>
+                        <div class="hologram-ring ring-2"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-section py-5 bg-light">
+    <section class="services-grid section-padding">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Why Choose Our Services?</h2>
-                <p class="section-subtitle">We're committed to delivering excellence in every project</p>
-            </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span class="material-icons">speed</span>
+                
+                <div class="col-lg-4 col-md-6 scroll-reveal">
+                    <div class="service-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box cyan">
+                            <span class="material-icons">settings_system_daydream</span>
                         </div>
-                        <h4>Fast Response</h4>
-                        <p>Quick turnaround time for all services</p>
+                        <h3>OS Architecture</h3>
+                        <p>Seamless deployment of Windows, Linux (Ubuntu, Fedora, Kali), and dual-boot environments optimized for zero-latency performance.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Kernel Optimization</li>
+                            <li><i class="fas fa-check"></i> Driver Synchronization</li>
+                            <li><i class="fas fa-check"></i> Custom Shell Configs</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span class="material-icons">verified_user</span>
+
+                <div class="col-lg-4 col-md-6 scroll-reveal delay-100">
+                    <div class="service-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box purple">
+                            <span class="material-icons">security</span>
                         </div>
-                        <h4>Reliable Solutions</h4>
-                        <p>Proven methods and quality assurance</p>
+                        <h3>Cybersecurity</h3>
+                        <p>Proactive threat hunting and firewall architecture. We secure your digital perimeter against evolving cyber threats.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Penetration Testing</li>
+                            <li><i class="fas fa-check"></i> Malware Elimination</li>
+                            <li><i class="fas fa-check"></i> Network Hardening</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span class="material-icons">attach_money</span>
+
+                <div class="col-lg-4 col-md-6 scroll-reveal delay-200">
+                    <div class="service-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box blue">
+                            <span class="material-icons">cloud_queue</span>
                         </div>
-                        <h4>Affordable Pricing</h4>
-                        <p>Competitive rates without compromising quality</p>
+                        <h3>Cloud & Network</h3>
+                        <p>Enterprise-grade network topology design and cloud integration services (AWS/Azure) for scalable growth.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> VPN Tunneling</li>
+                            <li><i class="fas fa-check"></i> Server Config</li>
+                            <li><i class="fas fa-check"></i> Cloud Migration</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span class="material-icons">support</span>
+
+                <div class="col-lg-4 col-md-6 scroll-reveal">
+                    <div class="service-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box cyan">
+                            <span class="material-icons">history</span>
                         </div>
-                        <h4>Expert Support</h4>
-                        <p>Professional assistance every step of the way</p>
+                        <h3>Data Recovery</h3>
+                        <p>Advanced forensic data retrieval from damaged drives and corrupted partitions. We recover what others can't.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Partition Repair</li>
+                            <li><i class="fas fa-check"></i> RAID Recovery</li>
+                            <li><i class="fas fa-check"></i> Encrypted Backups</li>
+                        </ul>
                     </div>
                 </div>
+
+                <div class="col-lg-4 col-md-6 scroll-reveal delay-100">
+                    <div class="service-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box purple">
+                            <span class="material-icons">memory</span>
+                        </div>
+                        <h3>Hardware Ops</h3>
+                        <p>Precision hardware upgrades and component diagnostics. From SSD migration to GPU optimization.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Component Logic</li>
+                            <li><i class="fas fa-check"></i> Thermal Management</li>
+                            <li><i class="fas fa-check"></i> System Overclocking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 scroll-reveal delay-200">
+                    <div class="service-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box blue">
+                            <span class="material-icons">support_agent</span>
+                        </div>
+                        <h3>24/7 Intel Support</h3>
+                        <p>Round-the-clock technical troubleshooting. Remote and on-site assistance for critical system failures.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Remote Debugging</li>
+                            <li><i class="fas fa-check"></i> Live Diagnostics</li>
+                            <li><i class="fas fa-check"></i> Priority Response</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section py-5">
+    <section class="process-section section-padding">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h2 class="mb-3">Ready to Get Started?</h2>
-                    <p class="lead mb-0">Contact us today for a free consultation and let's discuss how we can help with your IT needs.</p>
+            <div class="text-center mb-5 scroll-reveal">
+                <h2 class="section-title">The Swiftsync <span class="text-gradient">Protocol</span></h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step scroll-reveal">
+                    <div class="step-number">01</div>
+                    <h4>Diagnostic</h4>
+                    <p>Deep system scan and requirement analysis.</p>
                 </div>
-                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                    <a href="contact.html" class="btn btn-light btn-lg">
-                        <span class="material-icons align-middle">email</span>
-                        Contact Us Now
-                    </a>
+                <div class="connector scroll-reveal delay-100"></div>
+                <div class="process-step scroll-reveal delay-100">
+                    <div class="step-number">02</div>
+                    <h4>Strategy</h4>
+                    <p>Architecting the optimal solution path.</p>
+                </div>
+                <div class="connector scroll-reveal delay-200"></div>
+                <div class="process-step scroll-reveal delay-200">
+                    <div class="step-number">03</div>
+                    <h4>Execution</h4>
+                    <p>Precision deployment of software/hardware.</p>
+                </div>
+                <div class="connector scroll-reveal delay-300"></div>
+                <div class="process-step scroll-reveal delay-300">
+                    <div class="step-number">04</div>
+                    <h4>Sync</h4>
+                    <p>Final optimization and performance testing.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="tech-stack-section section-padding">
+        <div class="container">
+            <h4 class="text-center text-visible mb-5" style="letter-spacing: 2px;">TECHNOLOGY ARSENAL</h4>
+            <div class="tech-grid">
+                <div class="tech-item scroll-reveal"><i class="fab fa-linux"></i> <span>Linux</span></div>
+                <div class="tech-item scroll-reveal delay-100"><i class="fab fa-windows"></i> <span>Windows</span></div>
+                <div class="tech-item scroll-reveal delay-200"><i class="fab fa-ubuntu"></i> <span>Ubuntu</span></div>
+                <div class="tech-item scroll-reveal delay-300"><i class="fas fa-shield-alt"></i> <span>Kali</span></div>
+                <div class="tech-item scroll-reveal delay-400"><i class="fab fa-android"></i> <span>Android</span></div>
+                
+                <div class="tech-item scroll-reveal"><i class="fab fa-aws"></i> <span>AWS</span></div>
+                <div class="tech-item scroll-reveal delay-100"><i class="fab fa-docker"></i> <span>Docker</span></div>
+                <div class="tech-item scroll-reveal delay-200"><i class="fas fa-network-wired"></i> <span>Cisco</span></div>
+                <div class="tech-item scroll-reveal delay-300"><i class="fab fa-python"></i> <span>Python</span></div>
+                <div class="tech-item scroll-reveal delay-400"><i class="fab fa-git-alt"></i> <span>Git</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box glass-card text-center scroll-reveal">
+                <h2>System Update Required?</h2>
+                <p>Don't let legacy tech hold you back. Synchronize with the future today.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg glow-effect mt-3">Initiate Upgrade</a>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">
-                        <span class="material-icons align-middle">computer</span>
-                        Seth Chenge IT Services
-                    </h5>
-                    <p>Professional IT solutions for businesses and individuals. Your technology partner for success.</p>
+                    <div class="footer-brand">
+                        <img src="logo.jpg" alt="Logo" class="footer-logo">
+                        <h3>Swiftsync</h3>
+                    </div>
+                    <p class="footer-text">Synchronizing technology with human ambition. Providing world-class IT solutions from Kenya to the world.</p>
                 </div>
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="staff.html">Staff</a></li>
+                        <li><a href="staff.html">Team</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="cv.html">CV</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">Connect With Me</h5>
+                    <h4>Connect</h4>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/share/17JafkpZ9f/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/seth-chenge-248675322" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p class="mb-0">
-                    Made with <span class="material-icons text-danger align-middle">favorite</span> by <strong>Seth Chenge</strong>
-                </p>
-                <p class="mt-2 text-muted">&copy; 2025 Seth Chenge IT Services. All rights reserved.</p>
+            <hr class="footer-divider">
+            <div class="text-center copyright">
+                <p class="footer-text-bright">&copy; 2025 Swiftsync. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS -->
+    <div id="swiftsyncAI-button" class="ai-float">
+        <div class="ai-pulse"></div>
+        <span class="material-icons">smart_toy</span>
+        <span class="ai-text">Swiftsync AI</span>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
     <script src="services.js"></script>
-    <!-- SethAI Chat Interface -->
-<div id="sethAI-container">
-    <!-- Floating Button -->
-    <div id="sethAI-button" draggable="true">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>Ask SethAI</span>
-    </div>
-
-    <!-- Chat Window -->
-    <div id="sethAI-chat" class="sethAI-hidden">
-        <div class="sethAI-header">
-            <div class="sethAI-header-info">
-                <div class="sethAI-avatar">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div>
-                    <h3>SethAI Assistant</h3>
-                    <p class="sethAI-status">
-                        <span class="sethAI-status-dot"></span>
-                        Online
-                    </p>
-                </div>
-            </div>
-            <button id="sethAI-close" class="sethAI-close-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </button>
-        </div>
-
-        <div id="sethAI-messages" class="sethAI-messages">
-            <div class="sethAI-message sethAI-bot">
-                <div class="sethAI-message-avatar">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="sethAI-message-content">
-                    <p>👋 Hello! I'm SethAI, your virtual assistant for Seth Chenge IT Services. I can help you with:</p>
-                    <ul>
-                        <li>Information about our services</li>
-                        <li>Details about our team members</li>
-                        <li>Company history and background</li>
-                        <li>Contact information</li>
-                        <li>General IT questions</li>
-                    </ul>
-                    <p>How can I assist you today?</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="sethAI-suggestions" id="sethAI-suggestions">
-            <button class="sethAI-suggestion-btn" data-suggestion="What services do you offer?">What services do you offer?</button>
-            <button class="sethAI-suggestion-btn" data-suggestion="Tell me about your team">Tell me about your team</button>
-            <button class="sethAI-suggestion-btn" data-suggestion="How can I contact you?">How can I contact you?</button>
-        </div>
-
-        <div class="sethAI-input-container">
-            <input 
-                type="text" 
-                id="sethAI-input" 
-                placeholder="Ask me anything about our services..."
-                autocomplete="off"
-            />
-            <button id="sethAI-send" class="sethAI-send-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-    </div>
-</div>
-    <script src="SethAI.js"></script>
 </body>
 </html>

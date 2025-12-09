@@ -3,615 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - SethChenge | Meet Our IT Experts</title>
+    <meta name="description" content="Meet the elite engineers and visionaries behind Swiftsync. Expert leadership in IT architecture and cybersecurity.">
+    <meta name="theme-color" content="#0a0a0a">
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Meet the expert team behind SethChenge IT solutions. Our certified professionals provide top-tier Windows installation, cybersecurity, and cloud services.">
-    <meta name="keywords" content="IT team, Seth Chenge CEO, IT experts, cybersecurity specialists, cloud engineers, SethChenge staff">
-    <meta name="author" content="SethChenge">
+    <title>Our Team | Swiftsync</title>
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Our Team - SethChenge IT Solutions">
-    <meta property="og:description" content="Meet the expert team behind SethChenge IT solutions and services">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sethchenge.com/staff">
-    
-    <!-- Favicon -->
-  <!-- Standard favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <!-- PNG format (recommended for modern browsers) -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- Apple Touch Icon (for iOS devices) -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <!-- Android/Chrome -->
-  <link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="staff.css">
-    <link rel="stylesheet" href="SethAI.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-    <!-- Sidebar Overlay -->
+<body class="dark-theme">
+
+    <div class="loader-wrapper">
+        <div class="loader-content">
+            <h2 class="loader-text">ACCESSING PERSONNEL</h2>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <canvas id="neuron-canvas"></canvas>
+
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Sidebar Navigation -->
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <a class="navbar-brand" href="index.html">
-                <span class="material-icons align-middle">computer</span>
-                <span class="brand-text">Seth Chenge</span>
+                <img src="logo.jpg" alt="Swiftsync Logo" class="brand-logo">
+                <span class="brand-text">Swiftsync</span>
             </a>
             <button class="sidebar-close" id="sidebarClose">
                 <span class="material-icons">close</span>
             </button>
         </div>
         <ul class="sidebar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <span class="material-icons">home</span>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="services.html">
-                    <span class="material-icons">build</span>
-                    <span>Services</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="staff.html">
-                    <span class="material-icons">group</span>
-                    <span>Staff</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.html">
-                    <span class="material-icons">contact_mail</span>
-                    <span>Contact</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="cv.html">
-                    <span class="material-icons">description</span>
-                    <span>CV</span>
-                </a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html"><span class="material-icons">home</span> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html"><span class="material-icons">hub</span> Services</a></li>
+            <li class="nav-item"><a class="nav-link active" href="staff.html"><span class="material-icons">groups</span> Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html"><span class="material-icons">contact_mail</span> Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="cv.html"><span class="material-icons">description</span> CV</a></li>
         </ul>
     </nav>
 
-    <!-- Top Navigation Bar (Desktop) -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <!-- Mobile Menu Toggle -->
             <button class="navbar-toggler sidebar-toggle" type="button" id="sidebarToggle">
-                <span class="navbar-toggler-icon"></span>
+                <span class="material-icons">menu</span>
             </button>
             
             <a class="navbar-brand" href="index.html">
-                <span class="material-icons align-middle">computer</span>
-                <span class="brand-text">Seth Chenge</span>
+                <img src="logo.jpg" alt="Swiftsync Logo" class="brand-logo">
+                <span class="brand-text">Swiftsync</span>
             </a>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <span class="material-icons">home</span>
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">
-                            <span class="material-icons">build</span>
-                            Services
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="staff.html">
-                            <span class="material-icons">group</span>
-                            Staff
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            <span class="material-icons">contact_mail</span>
-                            Contact
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cv.html">
-                            <span class="material-icons">description</span>
-                            CV
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="staff.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn-glow" href="contact.html">Hire Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="display-4 fw-bold mb-4 fade-in-up">Meet Our Team</h1>
-                <p class="lead mb-5 fade-in-up delay-200">
-                    The expert professionals behind SethChenge's success in delivering world-class IT solutions
+    <section class="staff-hero">
+        <div class="container text-center">
+            <div class="fade-in-up">
+                <span class="section-tag">The Architects</span>
+                <h1 class="display-3 fw-bold mb-4">
+                    Minds Behind <br>
+                    <span class="text-gradient">Swiftsync</span>
+                </h1>
+                <p class="lead text-visible mx-auto" style="max-width: 700px;">
+                    We are a collective of certified engineers, security analysts, and cloud architects dedicated to synchronizing the world with the future of technology.
                 </p>
-                <div class="header-stats fade-in-up delay-300">
-                    <div class="stat-item">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Team Members</div>
+            </div>
+            
+            <div class="row justify-content-center mt-5 fade-in-up delay-200">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card glass-card">
+                        <h2 class="text-primary">15+</h2>
+                        <small>Years Experience</small>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Years Combined Experience</div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card glass-card">
+                        <h2 class="text-secondary">500+</h2>
+                        <small>Projects Deployed</small>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-card glass-card">
+                        <h2 class="text-accent">100%</h2>
+                        <small>Uptime Record</small>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CEO Section -->
-    <section class="ceo-section py-5 bg-white">
+    <section class="leadership-section section-padding">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Our Founder & CEO</h2>
-                <p class="section-subtitle">The visionary leader behind SethChenge's success story</p>
-            </div>
-            
-            <div class="ceo-container">
-                <div class="row align-items-center">
-                    <!-- CEO Image Section -->
-                    <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0 scroll-reveal">
+                    <div class="ceo-card glass-card">
+                        <div class="card-glow"></div>
                         <div class="ceo-image-wrapper">
-                            <div class="ceo-image-container">
-                                <!-- Replace 'your-image.jpg' with your actual image path -->
-                                <img src="ICT teacher.jpg" alt="Seth Chenge - CEO" class="ceo-image">
-                                <div class="verified-badge">
-                                    <span class="material-icons">verified</span>
-                                </div>
-                            </div>
-                            <div class="text-center mt-4">
-                                <h3 class="ceo-name">Seth Chenge</h3>
-                                <p class="ceo-title">Chief Executive Officer & Founder</p>
-                                <div class="ceo-badges">
-                                    <span class="badge bg-primary">CEO</span>
-                                    <span class="badge bg-success">CISCO Certified</span>
-                                    <span class="badge bg-warning text-dark">AWS Expert</span>
-                                </div>
+                            <img src="ICT teacher.jpg" alt="Seth Chenge" class="ceo-img">
+                            <div class="verified-badge"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="ceo-info text-center mt-4">
+                            <h3>Seth Chenge</h3>
+                            <span class="role-badge">FOUNDER & CEO</span>
+                            <div class="skills-row mt-3">
+                                <span class="skill-pill">CISCO</span>
+                                <span class="skill-pill">AWS</span>
+                                <span class="skill-pill">Linux</span>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- CEO Story Section -->
-                    <div class="col-lg-8">
-                        <div class="ceo-story">
-                            <div class="story-header mb-4">
-                                <h4 class="d-flex align-items-center">
-                                    <span class="material-icons me-2 text-primary">history</span>
-                                    The SethChenge Story
-                                </h4>
-                            </div>
-                            <div class="story-content">
-                                <p>
-                                    Founded in 2019, SethChenge emerged from Seth's vision to bridge the gap between complex IT solutions and business needs. Starting as a solo entrepreneur with just a laptop and unwavering determination, Seth faced numerous challenges in the competitive IT landscape.
-                                </p>
-                                <p>
-                                    The early days were marked by long nights debugging systems, learning new technologies, and building trust with the first clients. The biggest challenge came in 2020 when the pandemic forced rapid digital transformation, but this became SethChenge's breakthrough moment.
-                                </p>
-                                <p>
-                                    Today, SethChenge has grown from a one-person operation to a trusted IT solutions provider, having successfully completed over 1000 projects and earned certifications from industry leaders like CISCO, AWS, and Microsoft.
-                                </p>
-                            </div>
-                            
-                            <div class="milestones mt-4">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="milestone-card">
-                                            <div class="milestone-icon">
-                                                <span class="material-icons">rocket_launch</span>
-                                            </div>
-                                            <h5>2019 - The Beginning</h5>
-                                            <p>Founded SethChenge with a mission to democratize IT solutions for businesses of all sizes.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="milestone-card">
-                                            <div class="milestone-icon">
-                                                <span class="material-icons">trending_up</span>
-                                            </div>
-                                            <h5>2020 - Breakthrough</h5>
-                                            <p>Pivoted during pandemic to help businesses transition to remote work and cloud solutions.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="milestone-card">
-                                            <div class="milestone-icon">
-                                                <span class="material-icons">school</span>
-                                            </div>
-                                            <h5>2021 - Certifications</h5>
-                                            <p>Earned multiple industry certifications including CISCO, AWS, and Microsoft Azure.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="milestone-card">
-                                            <div class="milestone-icon">
-                                                <span class="material-icons">groups</span>
-                                            </div>
-                                            <h5>2024 - Team Growth</h5>
-                                            <p>Expanded team to include specialized experts in cybersecurity and cloud architecture.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-info mt-4">
-                                <h5 class="d-flex align-items-center mb-3">
-                                    <span class="material-icons me-2 text-primary">contact_mail</span>
-                                    Get in Touch with Seth
-                                </h5>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="contact-item">
-                                            <span class="material-icons">phone</span>
-                                            <a href="tel:+254721156350">+254 721 156 350</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="contact-item">
-                                            <span class="material-icons">email</span>
-                                            <a href="mailto:chengeseth25@gmail.com">chengeseth25@gmail.com</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Members Section -->
-    <section class="team-section py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Our Expert Team</h2>
-                <p class="section-subtitle">Meet the skilled professionals who make SethChenge's success possible</p>
-            </div>
-            
-            <div class="row g-4">
-                <!-- Team Member 1 -->
-                <div class="col-md-6">
-                    <div class="team-card">
-                        <div class="team-card-header">
-                            <div class="member-avatar">
-                                <div class="avatar-circle" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                    PK
-                                </div>
-                                <div class="verified-icon">
-                                    <span class="material-icons">verified</span>
-                                </div>
-                            </div>
-                            <h3 class="member-name">Purity kyalo</h3>
-                            <p class="member-role">Senior Cybersecurity Specialist</p>
-                            <div class="member-badges">
-                                <span class="badge bg-danger">Security+</span>
-                                <span class="badge bg-primary">Ethical Hacker</span>
-                                <span class="badge bg-secondary">CISSP</span>
-                            </div>
-                        </div>
-                        
-                        <div class="team-card-body">
-                            <p class="member-bio">
-                                Purity brings 5+ years of cybersecurity expertise to SethChenge, specializing in threat assessment, penetration testing, and security architecture. Sh`e's passionate about protecting businesses from evolving cyber threats.
-                            </p>
-                            
-                            <div class="specializations">
-                                <h5>Specializations:</h5>
-                                <ul>
-                                    <li>
-                                        <span class="material-icons">security</span>
-                                        Network Security & Firewall Management
-                                    </li>
-                                    <li>
-                                        <span class="material-icons">bug_report</span>
-                                        Vulnerability Assessment & Penetration Testing
-                                    </li>
-                                    <li>
-                                        <span class="material-icons">shield</span>
-                                        Incident Response & Digital Forensics
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="achievements">
-                                <h6>
-                                    <span class="material-icons">emoji_events</span>
-                                    Key Achievements
-                                </h6>
-                                <ul>
-                                    <li>Secured 200+ enterprise networks</li>
-                                    <li>Reduced security incidents by 90%</li>
-                                    <li>Certified Ethical Hacker (CEH)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Team Member 2 -->
-                <div class="col-md-6">
-                    <div class="team-card">
-                        <div class="team-card-header">
-                            <div class="member-avatar">
-                                <div class="avatar-circle" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
-                                    WO
-                                </div>
-                                <div class="verified-icon">
-                                    <span class="material-icons">verified</span>
-                                </div>
-                            </div>
-                            <h3 class="member-name">Webster Onsando</h3>
-                            <p class="member-role">Cloud Solutions Architect</p>
-                            <div class="member-badges">
-                                <span class="badge bg-warning text-dark">AWS Certified</span>
-                                <span class="badge bg-primary">Azure Expert</span>
-                                <span class="badge bg-success">DevOps</span>
-                            </div>
-                        </div>
-                        
-                        <div class="team-card-body">
-                            <p class="member-bio">
-                                Webster is our cloud infrastructure expert with 6+ years of experience in designing scalable cloud solutions. He leads our cloud migration projects and ensures optimal performance and cost-efficiency.
-                            </p>
-                            
-                            <div class="specializations">
-                                <h5>Specializations:</h5>
-                                <ul>
-                                    <li>
-                                        <span class="material-icons">cloud</span>
-                                        AWS & Azure Cloud Architecture
-                                    </li>
-                                    <li>
-                                        <span class="material-icons">sync</span>
-                                        DevOps & CI/CD Pipeline Implementation
-                                    </li>
-                                    <li>
-                                        <span class="material-icons">storage</span>
-                                        Database Management & Optimization
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="achievements">
-                                <h6>
-                                    <span class="material-icons">emoji_events</span>
-                                    Key Achievements
-                                </h6>
-                                <ul>
-                                    <li>Migrated 150+ systems to cloud</li>
-                                    <li>Reduced infrastructure costs by 40%</li>
-                                    <li>AWS Solutions Architect Professional</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Values Section -->
-    <section class="values-section py-5 bg-white">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Our Core Values</h2>
-                <p class="section-subtitle">The principles that guide everything we do at SethChenge</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <span class="material-icons">engineering</span>
-                        </div>
-                        <h3>Technical Excellence</h3>
-                        <p>We strive for the highest standards in every project, utilizing cutting-edge technologies and best practices.</p>
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <span class="material-icons">handshake</span>
+                <div class="col-lg-7 ps-lg-5 scroll-reveal delay-100">
+                    <h2 class="mb-4">Visionary <span class="text-gradient">Leadership</span></h2>
+                    <p class="text-visible mb-4">
+                        Founded in 2019, Swiftsync emerged from a singular vision: to democratize enterprise-grade IT solutions. Starting as a solo operation, Seth transformed technical challenges into seamless solutions, navigating the digital shift of 2020 to build a powerhouse of innovation.
+                    </p>
+                    <div class="milestone-timeline">
+                        <div class="milestone">
+                            <span class="year">2019</span>
+                            <p>Foundation established. Mission protocols initiated.</p>
                         </div>
-                        <h3>Client Partnership</h3>
-                        <p>We build lasting relationships with our clients, understanding their unique needs and delivering tailored solutions.</p>
+                        <div class="milestone">
+                            <span class="year">2021</span>
+                            <p>Achieved CISCO & AWS elite certifications.</p>
+                        </div>
+                        <div class="milestone">
+                            <span class="year">2024</span>
+                            <p>Team expansion into Cybersec & Cloud divisions.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <span class="material-icons">trending_up</span>
-                        </div>
-                        <h3>Continuous Growth</h3>
-                        <p>We're committed to continuous learning and improvement, staying ahead of industry trends and technologies.</p>
+                    <div class="mt-4">
+                        <a href="contact.html" class="btn btn-outline-light"><i class="fas fa-envelope me-2"></i> Contact Seth</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="squad-section section-padding">
+        <div class="container">
+            <h2 class="text-center mb-5 scroll-reveal">Elite <span class="text-gradient">Specialists</span></h2>
+            
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-6 col-lg-4 scroll-reveal">
+                    <div class="member-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="member-header">
+                            <div class="avatar-placeholder gradient-1">PK</div>
+                            <div class="member-role">
+                                <h4>Purity Kyalo</h4>
+                                <span class="text-secondary">Security Lead</span>
+                            </div>
+                        </div>
+                        <div class="member-body">
+                            <p>Cybersecurity architect specializing in threat elimination and zero-trust networks. Ensuring your data remains impenetrable.</p>
+                            <ul class="specs-list">
+                                <li><i class="fas fa-shield-alt"></i> Ethical Hacking</li>
+                                <li><i class="fas fa-lock"></i> Encryption</li>
+                                <li><i class="fas fa-network-wired"></i> Forensics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 scroll-reveal delay-100">
+                    <div class="member-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="member-header">
+                            <div class="avatar-placeholder gradient-2">WO</div>
+                            <div class="member-role">
+                                <h4>Webster Onsando</h4>
+                                <span class="text-primary">Cloud Architect</span>
+                            </div>
+                        </div>
+                        <div class="member-body">
+                            <p>Cloud infrastructure engineer focused on scalability and AWS/Azure integration. Building the sky-high servers of tomorrow.</p>
+                            <ul class="specs-list">
+                                <li><i class="fab fa-aws"></i> AWS Certified</li>
+                                <li><i class="fas fa-server"></i> DevOps</li>
+                                <li><i class="fas fa-database"></i> Big Data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-section section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 scroll-reveal">
+                    <div class="value-box text-center">
+                        <i class="material-icons value-icon">precision_manufacturing</i>
+                        <h4>Precision</h4>
+                        <p>We don't guess. We engineer solutions with mathematical accuracy.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 scroll-reveal delay-100">
+                    <div class="value-box text-center">
+                        <i class="material-icons value-icon">all_inclusive</i>
+                        <h4>Continuity</h4>
+                        <p>Systems designed for uptime. Support that never sleeps.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 scroll-reveal delay-200">
+                    <div class="value-box text-center">
+                        <i class="material-icons value-icon">bolt</i>
+                        <h4>Velocity</h4>
+                        <p>Rapid deployment and optimization for high-speed workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">
-                        <span class="material-icons align-middle">computer</span>
-                        Seth Chenge IT Services
-                    </h5>
-                    <p>Your trusted partner for comprehensive IT solutions. We deliver excellence in technology services with certified expertise and 24/7 support.</p>
-                    <div class="social-icons mt-4">
-                        <a href="https://www.facebook.com/share/17JafkpZ9f/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/seth-chenge-248675322" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <div class="footer-brand">
+                        <img src="logo.jpg" alt="Logo" class="footer-logo">
+                        <h3>Swiftsync</h3>
                     </div>
+                    <p class="footer-text">Synchronizing technology with human ambition. Providing world-class IT solutions from Kenya to the world.</p>
                 </div>
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="staff.html">Staff</a></li>
+                        <li><a href="staff.html">Team</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="cv.html">CV</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">Contact Info</h5>
-                    <ul class="list-unstyled contact-info">
-                        <li>
-                            <span class="material-icons">phone</span>
-                            <a href="tel:+254721156350">+254 721 156 350</a>
-                        </li>
-                        <li>
-                            <span class="material-icons">email</span>
-                            <a href="mailto:chengeseth25@gmail.com">chengeseth25@gmail.com</a>
-                        </li>
-                        <li>
-                            <span class="material-icons">location_on</span>
-                            <span>Nairobi, Kenya</span>
-                        </li>
-                        <li>
-                            <span class="material-icons">schedule</span>
-                            <span>24/7 Support Available</span>
-                        </li>
-                    </ul>
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p class="mb-0">
-                    Made with <span class="material-icons text-danger align-middle">favorite</span> by <strong>Seth Chenge</strong>
-                </p>
-                <p class="mt-2 text-muted">&copy; 2025 SethChenge IT Services. All rights reserved.</p>
+            <hr class="footer-divider">
+            <div class="text-center copyright">
+                <p class="footer-text-bright">&copy; 2025 Swiftsync. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS -->
+    <div id="swiftsyncAI-button" class="ai-float">
+        <div class="ai-pulse"></div>
+        <span class="material-icons">smart_toy</span>
+        <span class="ai-text">Swiftsync AI</span>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="script.js"></script>
     <script src="staff.js"></script>
-    <!-- SethAI Chat Interface -->
-<div id="sethAI-container">
-    <!-- Floating Button -->
-    <div id="sethAI-button" draggable="true">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>Ask SethAI</span>
-    </div>
-
-    <!-- Chat Window -->
-    <div id="sethAI-chat" class="sethAI-hidden">
-        <div class="sethAI-header">
-            <div class="sethAI-header-info">
-                <div class="sethAI-avatar">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div>
-                    <h3>SethAI Assistant</h3>
-                    <p class="sethAI-status">
-                        <span class="sethAI-status-dot"></span>
-                        Online
-                    </p>
-                </div>
-            </div>
-            <button id="sethAI-close" class="sethAI-close-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </button>
-        </div>
-
-        <div id="sethAI-messages" class="sethAI-messages">
-            <div class="sethAI-message sethAI-bot">
-                <div class="sethAI-message-avatar">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="sethAI-message-content">
-                    <p>👋 Hello! I'm SethAI, your virtual assistant for Seth Chenge IT Services. I can help you with:</p>
-                    <ul>
-                        <li>Information about our services</li>
-                        <li>Details about our team members</li>
-                        <li>Company history and background</li>
-                        <li>Contact information</li>
-                        <li>General IT questions</li>
-                    </ul>
-                    <p>How can I assist you today?</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="sethAI-suggestions" id="sethAI-suggestions">
-            <button class="sethAI-suggestion-btn" data-suggestion="What services do you offer?">What services do you offer?</button>
-            <button class="sethAI-suggestion-btn" data-suggestion="Tell me about your team">Tell me about your team</button>
-            <button class="sethAI-suggestion-btn" data-suggestion="How can I contact you?">How can I contact you?</button>
-        </div>
-
-        <div class="sethAI-input-container">
-            <input 
-                type="text" 
-                id="sethAI-input" 
-                placeholder="Ask me anything about our services..."
-                autocomplete="off"
-            />
-            <button id="sethAI-send" class="sethAI-send-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-    </div>
-</div>
-    <script src="SethAI.js"></script>
 </body>
-
 </html>

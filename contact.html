@@ -3,477 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Seth Chenge for professional IT services including OS installation, troubleshooting, and technical support">
-    <meta name="keywords" content="contact IT services, OS installation, technical support, computer repair contact">
-    <meta name="author" content="Seth Chenge">
-    <title>Contact Us - Seth Chenge IT Services</title>
+    <meta name="description" content="Contact Swiftsync - Initiate communication for IT support, project inquiries, and consultations.">
+    <meta name="theme-color" content="#0a0a0a">
     
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Contact | Swiftsync</title>
     
-    <!-- Google Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="SethAI.css">
-  <!-- Standard favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <!-- PNG format (recommended for modern browsers) -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- Apple Touch Icon (for iOS devices) -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <!-- Android/Chrome -->
-  <link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-    <!-- Sidebar Overlay -->
+<body class="dark-theme">
+
+    <div class="loader-wrapper">
+        <div class="loader-content">
+            <h2 class="loader-text">ESTABLISHING UPLINK</h2>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <canvas id="neuron-canvas"></canvas>
+
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Sidebar Navigation -->
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <a class="navbar-brand" href="index.html">
-                <span class="material-icons align-middle">computer</span>
-                <span class="brand-text">Seth Chenge</span>
+                <img src="logo.jpg" alt="Swiftsync Logo" class="brand-logo">
+                <span class="brand-text">Swiftsync</span>
             </a>
             <button class="sidebar-close" id="sidebarClose">
                 <span class="material-icons">close</span>
             </button>
         </div>
         <ul class="sidebar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <span class="material-icons">home</span>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="services.html">
-                    <span class="material-icons">build</span>
-                    <span>Services</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="staff.html">
-                    <span class="material-icons">group</span>
-                    <span>Staff</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="contact.html">
-                    <span class="material-icons">contact_mail</span>
-                    <span>Contact</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="cv.html">
-                    <span class="material-icons">description</span>
-                    <span>CV</span>
-                </a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html"><span class="material-icons">home</span> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html"><span class="material-icons">hub</span> Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="staff.html"><span class="material-icons">groups</span> Team</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html"><span class="material-icons">contact_mail</span> Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="cv.html"><span class="material-icons">description</span> CV</a></li>
         </ul>
     </nav>
 
-    <!-- Top Navigation Bar (Desktop) -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <!-- Mobile Menu Toggle -->
             <button class="navbar-toggler sidebar-toggle" type="button" id="sidebarToggle">
-                <span class="navbar-toggler-icon"></span>
+                <span class="material-icons">menu</span>
             </button>
             
             <a class="navbar-brand" href="index.html">
-                <span class="material-icons align-middle">computer</span>
-                <span class="brand-text">Seth Chenge</span>
+                <img src="logo.jpg" alt="Swiftsync Logo" class="brand-logo">
+                <span class="brand-text">Swiftsync</span>
             </a>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <span class="material-icons">home</span>
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">
-                            <span class="material-icons">build</span>
-                            Services
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="staff.html">
-                            <span class="material-icons">group</span>
-                            Staff
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">
-                            <span class="material-icons">contact_mail</span>
-                            Contact
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cv.html">
-                            <span class="material-icons">description</span>
-                            CV
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="staff.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn-glow" href="cv.html">CV</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Contact Hero Section -->
     <section class="contact-hero">
         <div class="container">
-            <div class="text-center">
-                <h1 class="display-4 fw-bold mb-3">Get In Touch</h1>
-                <p class="lead">Have a question or need IT support? We're here to help!</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-text fade-in-up">
+                    <span class="section-tag">Communication Channel</span>
+                    <h1 class="display-3 fw-bold mb-4">
+                        Initiate <br>
+                        <span class="text-gradient">Protocol</span>
+                    </h1>
+                    <p class="lead text-visible">
+                        Ready to synchronize your systems? Our team is on standby to deploy solutions tailored to your infrastructure.
+                    </p>
+                </div>
+                <div class="col-lg-6 hero-visual text-center fade-in-up delay-200">
+                    <div class="radar-container">
+                        <div class="radar-sweep"></div>
+                        <div class="radar-dot dot-1"></div>
+                        <div class="radar-dot dot-2"></div>
+                        <i class="material-icons radar-icon">satellite_alt</i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section py-5">
+    <section class="contact-interface section-padding">
         <div class="container">
-            <div class="row g-4">
-                <!-- Contact Information -->
-                <div class="col-lg-4">
-                    <div class="contact-info-card">
-                        <h3 class="mb-4">Contact Information</h3>
+            <div class="row g-5">
+                
+                <div class="col-lg-5 scroll-reveal">
+                    <div class="info-panel glass-card">
+                        <div class="card-glow"></div>
+                        <h3 class="mb-4">Direct Link</h3>
+                        
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <span class="material-icons">phone</span>
+                            <div class="icon-box cyan">
+                                <span class="material-icons">call</span>
                             </div>
-                            <div class="contact-details">
-                                <h5>Phone</h5>
+                            <div class="details">
+                                <span>Voice Line</span>
                                 <a href="tel:+254721156350">+254 721 156 350</a>
                             </div>
                         </div>
+
                         <div class="contact-item">
-                            <div class="contact-icon">
+                            <div class="icon-box purple">
                                 <span class="material-icons">email</span>
                             </div>
-                            <div class="contact-details">
-                                <h5>Email</h5>
+                            <div class="details">
+                                <span>Digital Mail</span>
                                 <a href="mailto:chengeseth25@gmail.com">chengeseth25@gmail.com</a>
                             </div>
                         </div>
+
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <span class="material-icons">location_on</span>
+                            <div class="icon-box blue">
+                                <span class="material-icons">place</span>
                             </div>
-                            <div class="contact-details">
-                                <h5>Location</h5>
-                                <p>Meru, Kenya</p>
+                            <div class="details">
+                                <span>Base of Operations</span>
+                                <p>Nairobi, Kenya</p>
                             </div>
                         </div>
+
                         <div class="contact-item">
-                            <div class="contact-icon">
+                            <div class="icon-box cyan">
                                 <span class="material-icons">schedule</span>
                             </div>
-                            <div class="contact-details">
-                                <h5>Working Hours</h5>
-                                <p>Mon - Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 4:00 PM</p>
+                            <div class="details">
+                                <span>Active Hours</span>
+                                <p>Mon - Sat: 0800 - 1800 HRS</p>
                             </div>
                         </div>
-                        <div class="social-links mt-4">
-                            <h5 class="mb-3">Connect With Me</h5>
+
+                        <div class="social-connect mt-5">
+                            <h5>Signal Frequency</h5>
                             <div class="social-icons">
-                                <a href="https://www.facebook.com/share/17JafkpZ9f/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.linkedin.com/in/seth-chenge-248675322" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.facebook.com/share/17JafkpZ9f/" class="social-icon" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon coming-soon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon coming-soon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://wa.me/254721156350?text=Hello%20Swiftsync,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="social-icon" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="col-lg-8">
-                    <div class="contact-form-card">
-                        <h3 class="mb-4">Send Me a Message</h3>
+                <div class="col-lg-7 scroll-reveal delay-100">
+                    <div class="form-wrapper glass-card">
+                        <div class="card-glow"></div>
+                        <h3 class="mb-4">Transmission Form</h3>
                         <form id="contactForm">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                        <label for="name">Your Name *</label>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" required placeholder=" ">
+                                        <label for="name">Identifier (Name)</label>
+                                        <span class="focus-border"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                        <label for="email">Your Email *</label>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" required placeholder=" ">
+                                        <label for="email">Email Frequency</label>
+                                        <span class="focus-border"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone">
-                                        <label for="phone">Your Phone</label>
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control" id="phone" placeholder=" ">
+                                        <label for="phone">Comms Link (Phone)</label>
+                                        <span class="focus-border"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="service" name="service" required>
-                                            <option value="">Select a Service</option>
-                                            <option value="OS Installation - Linux">OS Installation - Linux</option>
-                                            <option value="OS Installation - Ubuntu">OS Installation - Ubuntu</option>
-                                            <option value="OS Installation - Windows">OS Installation - Windows</option>
-                                            <option value="System Troubleshooting">System Troubleshooting</option>
-                                            <option value="Hardware Repair">Hardware Repair</option>
-                                            <option value="Software Installation">Software Installation</option>
-                                            <option value="Network Setup">Network Setup</option>
+                                    <div class="form-group">
+                                        <select class="form-select" id="service" required>
+                                            <option value="" selected disabled>Select Directive</option>
+                                            <option value="OS Installation">OS Architecture</option>
+                                            <option value="Cybersecurity">Cybersecurity Audit</option>
+                                            <option value="Cloud Setup">Cloud Integration</option>
                                             <option value="Data Recovery">Data Recovery</option>
-                                            <option value="Technical Support">Technical Support</option>
-                                            <option value="System Upgrade">System Upgrade</option>
-                                            <option value="Virus Removal">Virus Removal</option>
-                                            <option value="Other">Other</option>
+                                            <option value="Support">Technical Support</option>
                                         </select>
-                                        <label for="service">Service Needed *</label>
+                                        <span class="focus-border"></span>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
-                                        <label for="message">Your Message *</label>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="message" style="height: 150px" required placeholder=" "></textarea>
+                                        <label for="message">Transmission Data</label>
+                                        <span class="focus-border"></span>
                                     </div>
+                                    <div class="char-count text-end text-muted mt-1"><small>0/1000</small></div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="contact-buttons">
-                                        <button type="submit" class="btn btn-primary btn-lg">
-                                            <span class="material-icons align-middle">send</span>
-                                            Contact Us
-                                        </button>
-                                        <a href="tel:+254721156350" class="btn btn-outline-primary btn-lg">
-                                            <span class="material-icons align-middle">phone</span>
-                                            Call Now
-                                        </a>
-                                    </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 glow-effect">
+                                        <span class="material-icons me-2">send</span> Send Transmission
+                                    </button>
                                 </div>
                             </div>
                         </form>
-                        <div id="formMessage" class="form-message"></div>
+                        <div id="formMessage" class="form-alert mt-3"></div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Quick Contact Section -->
-    <section class="quick-contact-section py-5">
+    <section class="support-section section-padding">
         <div class="container">
-            <div class="quick-contact-card">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <h3 class="mb-2">Need Immediate Assistance?</h3>
-                        <p class="mb-0">Our team is ready to help you with any IT challenges you're facing</p>
+            <div class="text-center mb-5 scroll-reveal">
+                <h2 class="section-title">Support <span class="text-gradient">Protocol</span></h2>
+                <p class="text-visible">Fuel the development of future technologies.</p>
+            </div>
+
+            <div class="row justify-content-center g-4">
+                <div class="col-md-5 scroll-reveal delay-100">
+                    <div class="payment-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="payment-header">
+                            <img src="Skrill.png" alt="Skrill" class="payment-logo">
+                            <h4>Skrill Transfer</h4>
+                        </div>
+                        <div class="copy-box">
+                            <input type="text" value="nyongesaseth25@gmail.com" readonly id="skrill-input">
+                            <button class="btn-copy" data-target="skrill-input">
+                                <span class="material-icons">content_copy</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-                        <a href="tel:+254721156350" class="btn btn-light btn-lg">
-                            <span class="material-icons align-middle">call</span>
-                            Call Now
-                        </a>
+                </div>
+
+                <div class="col-md-5 scroll-reveal delay-200">
+                    <div class="payment-card glass-card">
+                        <div class="card-glow"></div>
+                        <div class="payment-header">
+                            <img src="neteller.jpg" alt="Neteller" class="payment-logo">
+                            <h4>Neteller Transfer</h4>
+                        </div>
+                        <div class="copy-box">
+                            <input type="text" value="nyongesaseth25@gmail.com" readonly id="neteller-input">
+                            <button class="btn-copy" data-target="neteller-input">
+                                <span class="material-icons">content_copy</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Buy Me a Coffee Section -->
-<section class="buy-coffee-section py-5">
-    <div class="container">
-        <div class="coffee-card">
-            <h3 class="text-center mb-4">Love This Design?</h3>
-            <p class="text-center mb-4">Support my work by buying me a coffee ☕</p>
-            
-            <div class="payment-options">
-                <!-- Skrill Option -->
-                <div class="payment-option">
-                    <div class="payment-content">
-                        <div class="payment-logo">
-                            <img src="Skrill.png" alt="Skrill" id="skrillLogo">
-                        </div>
-                        <div class="pointer-icon">
-                            <span class="material-icons">touch_app</span>
-                        </div>
-                        <div class="payment-email">
-                            <span class="email-label">Skrill Email</span>
-                            <div class="email-copy-container" id="skrillEmail" data-email="nyongesaseth25@gmail.com">
-                                <span class="email-text">nyongesaseth25@gmail.com</span>
-                                <button class="copy-btn" data-target="skrillEmail">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Neteller Option -->
-                <div class="payment-option">
-                    <div class="payment-content">
-                        <div class="payment-logo">
-                            <img src="neteller.jpg" alt="Neteller" id="netellerLogo">
-                        </div>
-                        <div class="pointer-icon">
-                            <span class="material-icons">touch_app</span>
-                        </div>
-                        <div class="payment-email">
-                            <span class="email-label">Neteller Email</span>
-                            <div class="email-copy-container" id="netellerEmail" data-email="nyongesaseth25@gmail.com">
-                                <span class="email-text">nyongesaseth25@gmail.com</span>
-                                <button class="copy-btn" data-target="netellerEmail">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="thank-you-text text-center mt-4">Thank you for your support! 🙏</p>
-        </div>
-    </div>
-</section>
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">
-                        <span class="material-icons align-middle">computer</span>
-                        Seth Chenge IT Services
-                    </h5>
-                    <p>Professional IT solutions for businesses and individuals. Your technology partner for success.</p>
+                    <div class="footer-brand">
+                        <img src="logo.jpg" alt="Logo" class="footer-logo">
+                        <h3>Swiftsync</h3>
+                    </div>
+                    <p class="footer-text">Synchronizing technology with human ambition. Providing world-class IT solutions from Kenya to the world.</p>
                 </div>
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="staff.html">Staff</a></li>
+                        <li><a href="staff.html">Team</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="cv.html">CV</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 mb-4">
-                    <h5 class="mb-3">Connect With Me</h5>
+                    <h4>Connect</h4>
                     <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/17JafkpZ9f/" class="social-icon" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon coming-soon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon coming-soon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/sethchenge" class="social-icon" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p class="mb-0">
-                    Made with <span class="material-icons text-danger align-middle">favorite</span> by <strong>Seth Chenge</strong>
-                </p>
-                <p class="mt-2 text-muted">&copy; 2025 Seth Chenge IT Services. All rights reserved.</p>
+            <hr class="footer-divider">
+            <div class="text-center copyright">
+                <p class="footer-text-bright">&copy; 2025 Swiftsync. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS -->
+    <div id="swiftsyncAI-button" class="ai-float">
+        <div class="ai-pulse"></div>
+        <span class="material-icons">smart_toy</span>
+        <span class="ai-text">Swiftsync AI</span>
+    </div>
+
+    <div id="toast-notification" class="toast-notification">
+        <span class="material-icons">info</span>
+        <span id="toast-message">Notification</span>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="script.js"></script>
     <script src="contact.js"></script>
-    <!-- SethAI Chat Interface -->
-<div id="sethAI-container">
-    <!-- Floating Button -->
-    <div id="sethAI-button" draggable="true">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>Ask SethAI</span>
-    </div>
-
-    <!-- Chat Window -->
-    <div id="sethAI-chat" class="sethAI-hidden">
-        <div class="sethAI-header">
-            <div class="sethAI-header-info">
-                <div class="sethAI-avatar">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div>
-                    <h3>SethAI Assistant</h3>
-                    <p class="sethAI-status">
-                        <span class="sethAI-status-dot"></span>
-                        Online
-                    </p>
-                </div>
-            </div>
-            <button id="sethAI-close" class="sethAI-close-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </button>
-        </div>
-
-        <div id="sethAI-messages" class="sethAI-messages">
-            <div class="sethAI-message sethAI-bot">
-                <div class="sethAI-message-avatar">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="sethAI-message-content">
-                    <p>👋 Hello! I'm SethAI, your virtual assistant for Seth Chenge IT Services. I can help you with:</p>
-                    <ul>
-                        <li>Information about our services</li>
-                        <li>Details about our team members</li>
-                        <li>Company history and background</li>
-                        <li>Contact information</li>
-                        <li>General IT questions</li>
-                    </ul>
-                    <p>How can I assist you today?</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="sethAI-suggestions" id="sethAI-suggestions">
-            <button class="sethAI-suggestion-btn" data-suggestion="What services do you offer?">What services do you offer?</button>
-            <button class="sethAI-suggestion-btn" data-suggestion="Tell me about your team">Tell me about your team</button>
-            <button class="sethAI-suggestion-btn" data-suggestion="How can I contact you?">How can I contact you?</button>
-        </div>
-
-        <div class="sethAI-input-container">
-            <input 
-                type="text" 
-                id="sethAI-input" 
-                placeholder="Ask me anything about our services..."
-                autocomplete="off"
-            />
-            <button id="sethAI-send" class="sethAI-send-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-    </div>
-</div>
-    <script src="SethAI.js"></script>
 </body>
 </html>
