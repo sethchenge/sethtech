@@ -226,6 +226,19 @@ h1, h2, h3, h4, h5, h6 {
     .hero-section {
          padding-top: 130px; /* Still generous space for mobile */
     }
+
+    /* EDITED: Button Spacing Fix */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Adds vertical space between stacked buttons */
+        margin-top: 20px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%; /* Makes buttons full width on small screens */
+        margin-right: 0 !important; /* Removes the existing side margin */
+    }
 }
 
 .hero-badge {
