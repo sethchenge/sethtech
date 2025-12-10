@@ -1,352 +1,328 @@
-// ===== SWIFTSYNCAI KNOWLEDGE BASE =====
-const SWIFTSYNC_KNOWLEDGE = {
-    company: {
-        name: "Swiftsync",
-        tagline: "Synchronizing technology with human ambition",
-        founded: "2019",
-        location: "Kenya",
-        mission: "To democratize enterprise-grade IT solutions and build the infrastructure that powers ambition"
-    },
-    
+// ===== SWIFTSYNC AI ASSISTANT FUNCTIONALITY =====
+
+// Knowledge Base
+const swiftsyncKnowledge = {
     services: {
-        "os_architecture": {
-            name: "OS Architecture",
-            description: "Seamless deployment of Windows, Linux (Ubuntu, Fedora, Kali), and dual-boot environments optimized for zero-latency performance",
-            features: ["Kernel Optimization", "Driver Synchronization", "Custom Shell Configs"],
-            keywords: ["windows", "linux", "ubuntu", "fedora", "kali", "dual-boot", "operating system", "os"]
-        },
-        "cybersecurity": {
-            name: "Cybersecurity",
-            description: "Proactive threat hunting and firewall architecture securing your digital perimeter against evolving cyber threats",
-            features: ["Penetration Testing", "Malware Elimination", "Network Hardening"],
-            keywords: ["security", "cyber", "firewall", "threat", "malware", "penetration", "hacking"]
-        },
-        "cloud_network": {
-            name: "Cloud & Network",
-            description: "Enterprise-grade network topology design and cloud integration services (AWS/Azure) for scalable growth",
-            features: ["VPN Tunneling", "Server Configuration", "Cloud Migration"],
-            keywords: ["cloud", "aws", "azure", "network", "vpn", "server", "migration"]
-        },
-        "data_recovery": {
-            name: "Data Recovery",
-            description: "Advanced forensic data retrieval from damaged drives and corrupted partitions. We recover what others can't",
-            features: ["Partition Repair", "RAID Recovery", "Encrypted Backups"],
-            keywords: ["data", "recovery", "backup", "partition", "raid", "forensic"]
-        },
-        "hardware_ops": {
-            name: "Hardware Operations",
-            description: "Precision hardware upgrades and component diagnostics from SSD migration to GPU optimization",
-            features: ["Component Logic", "Thermal Management", "System Overclocking"],
-            keywords: ["hardware", "upgrade", "ssd", "gpu", "thermal", "overclock"]
-        },
-        "support": {
-            name: "24/7 Intel Support",
-            description: "Round-the-clock technical troubleshooting with remote and on-site assistance for critical system failures",
-            features: ["Remote Debugging", "Live Diagnostics", "Priority Response"],
-            keywords: ["support", "help", "troubleshoot", "remote", "assistance", "24/7"]
-        }
+        'os architecture': 'We provide seamless deployment of Windows, Linux (Ubuntu, Fedora, Kali), and dual-boot environments optimized for zero-latency performance. This includes kernel optimization, driver synchronization, and custom shell configurations.',
+        'cybersecurity': 'Our cybersecurity services include proactive threat hunting, firewall architecture, penetration testing, malware elimination, and network hardening to secure your digital perimeter.',
+        'cloud': 'We offer enterprise-grade network topology design and cloud integration services for AWS and Azure, including VPN tunneling, server configuration, and cloud migration.',
+        'data recovery': 'Advanced forensic data retrieval from damaged drives and corrupted partitions, including partition repair, RAID recovery, and encrypted backups.',
+        'hardware': 'Precision hardware upgrades and component diagnostics, from SSD migration to GPU optimization, including component logic, thermal management, and system overclocking.',
+        'support': 'Round-the-clock technical troubleshooting with remote debugging, live diagnostics, and priority response for critical system failures.'
     },
-    
     team: {
-        ceo: {
-            name: "Seth Chenge",
-            role: "Founder & CEO",
-            expertise: ["CISCO Certified", "AWS Certified", "Linux Expert"],
-            bio: "Founded Swiftsync in 2019 with a vision to democratize enterprise-grade IT solutions. Transformed technical challenges into seamless solutions during the digital shift of 2020."
-        },
-        members: [
-            {
-                name: "Purity Kyalo",
-                role: "Security Lead",
-                expertise: ["Ethical Hacking", "Encryption", "Network Forensics"],
-                description: "Cybersecurity architect specializing in threat elimination and zero-trust networks"
-            },
-            {
-                name: "Webster Onsando",
-                role: "Cloud Architect",
-                expertise: ["AWS Certified", "DevOps", "Big Data"],
-                description: "Cloud infrastructure engineer focused on scalability and AWS/Azure integration"
-            }
-        ]
+        'seth chenge': 'Seth Chenge is the Founder & CEO of Swiftsync, with CISCO and AWS elite certifications. He founded the company in 2019 with a vision to democratize enterprise-grade IT solutions.',
+        'purity kyalo': 'Purity Kyalo is our Security Lead, specializing in ethical hacking, encryption, and forensics. She ensures your data remains impenetrable.',
+        'webster onsando': 'Webster Onsando is our Cloud Architect, AWS certified and focused on scalability, DevOps, and big data solutions.'
     },
-    
-    process: [
-        { step: "Diagnostic", description: "Deep system scan and requirement analysis" },
-        { step: "Strategy", description: "Architecting the optimal solution path" },
-        { step: "Execution", description: "Precision deployment of software/hardware" },
-        { step: "Sync", description: "Final optimization and performance testing" }
-    ],
-    
-    technologies: ["Linux", "Windows", "Ubuntu", "Kali", "Android", "AWS", "Docker", "Cisco", "Python", "Git"],
-    
-    values: [
-        { name: "Precision", description: "We don't guess. We engineer solutions with mathematical accuracy" },
-        { name: "Continuity", description: "Systems designed for uptime. Support that never sleeps" },
-        { name: "Velocity", description: "Rapid deployment and optimization for high-speed workflows" }
-    ],
-    
-    stats: {
-        experience: "15+ years",
-        projects: "500+ deployed",
-        uptime: "100% record"
+    general: {
+        'pricing': 'Our pricing is customized based on your specific needs. Contact us for a personalized quote tailored to your project requirements.',
+        'contact': 'You can reach us through our contact page or email us directly. We offer both remote and on-site support services.',
+        'about': 'Swiftsync was founded in 2019 to synchronize technology with human ambition. We provide world-class IT solutions from Kenya to the world, with 15+ years of combined experience and 500+ successfully deployed projects.',
+        'location': 'We are based in Kenya and serve clients worldwide with both remote and on-site services.',
+        'experience': 'Our team has 15+ years of combined experience and has successfully deployed 500+ projects with a 100% uptime record.'
     }
 };
 
-// ===== AI RESPONSE GENERATOR =====
-class SwiftsyncAI {
-    constructor() {
-        this.knowledge = SWIFTSYNC_KNOWLEDGE;
+// DOM Elements
+let aiModal, aiTrigger, aiClose, chatArea, userInput, sendBtn, charCount, quickBtns;
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initSwiftsyncAI);
+
+function initSwiftsyncAI() {
+    // Get or create elements
+    aiTrigger = document.getElementById('aiTrigger');
+    aiModal = document.getElementById('aiModal');
+    
+    if (!aiTrigger || !aiModal) {
+        console.error('Swiftsync AI: Required elements not found');
+        return;
     }
     
-    generateResponse(userQuery) {
-        const query = userQuery.toLowerCase();
-        
-        // Greetings
-        if (this.matchesPattern(query, ["hello", "hi", "hey", "greetings", "good morning", "good afternoon", "good evening"])) {
-            return "Hello! I'm SwiftsyncAI, your intelligent IT consultation assistant. I can help you learn about our services, team, technologies, or answer any questions about Swiftsync. What would you like to know?";
-        }
-        
-        // Services Overview
-        if (this.matchesPattern(query, ["services", "what do you offer", "what can you do", "capabilities"])) {
-            return `Swiftsync offers six core services:\n\n🔧 **OS Architecture** - Windows, Linux deployment & optimization\n🛡️ **Cybersecurity** - Threat hunting & network hardening\n☁️ **Cloud & Network** - AWS/Azure integration & VPN solutions\n💾 **Data Recovery** - Forensic retrieval & RAID recovery\n⚙️ **Hardware Operations** - Precision upgrades & diagnostics\n🎯 **24/7 Intel Support** - Round-the-clock technical assistance\n\nWhich service interests you most?`;
-        }
-        
-        // Specific Service Queries
-        for (const [key, service] of Object.entries(this.knowledge.services)) {
-            if (this.matchesPattern(query, service.keywords)) {
-                return `**${service.name}**\n\n${service.description}\n\n✓ ${service.features.join("\n✓ ")}\n\nWould you like to know more about this service or get a quote?`;
-            }
-        }
-        
-        // Team Questions
-        if (this.matchesPattern(query, ["team", "staff", "who", "people", "members", "employees"])) {
-            let response = "**Meet the Swiftsync Team:**\n\n";
-            response += `👔 **${this.knowledge.team.ceo.name}** - ${this.knowledge.team.ceo.role}\n`;
-            response += `${this.knowledge.team.ceo.bio}\n\n`;
-            this.knowledge.team.members.forEach(member => {
-                response += `👤 **${member.name}** - ${member.role}\n${member.description}\n\n`;
-            });
-            return response + "Our team has 15+ years of combined experience and has deployed 500+ projects with a 100% uptime record.";
-        }
-        
-        // CEO/Founder Questions
-        if (this.matchesPattern(query, ["seth", "ceo", "founder", "owner"])) {
-            const ceo = this.knowledge.team.ceo;
-            return `**${ceo.name}** - ${ceo.role}\n\n${ceo.bio}\n\n**Certifications:**\n• ${ceo.expertise.join("\n• ")}\n\nSeth founded Swiftsync in 2019 and has led the company through significant milestones including CISCO & AWS certifications in 2021 and team expansion in 2024.`;
-        }
-        
-        // Process Questions
-        if (this.matchesPattern(query, ["process", "how do you work", "workflow", "methodology", "approach"])) {
-            let response = "**The Swiftsync Protocol:**\n\n";
-            this.knowledge.process.forEach((phase, index) => {
-                response += `${index + 1}. **${phase.step}** - ${phase.description}\n`;
-            });
-            return response + "\nThis systematic approach ensures precision deployment and optimal performance for every project.";
-        }
-        
-        // Technology Stack
-        if (this.matchesPattern(query, ["technology", "tech", "stack", "tools", "platforms"])) {
-            return `**Technology Arsenal:**\n\n${this.knowledge.technologies.join(" • ")}\n\nWe work with industry-leading technologies to deliver enterprise-grade solutions. From Linux systems to cloud platforms like AWS, we've mastered the tools that power modern infrastructure.`;
-        }
-        
-        // Pricing/Quote
-        if (this.matchesPattern(query, ["price", "cost", "quote", "how much", "pricing"])) {
-            return "Our pricing is customized based on your specific needs and project scope. Each solution is tailored to deliver maximum value.\n\nTo get an accurate quote:\n1. Visit our Contact page\n2. Describe your requirements\n3. Our team will provide a detailed proposal within 24 hours\n\nWould you like me to guide you to the contact form?";
-        }
-        
-        // Getting Started
-        if (this.matchesPattern(query, ["start", "begin", "get started", "hire", "work with you"])) {
-            return "**Getting Started with Swiftsync:**\n\n1. 📋 **Initial Consultation** - Tell us your requirements\n2. 🔍 **System Diagnostic** - We analyze your current setup\n3. 📊 **Strategy Proposal** - Custom solution architecture\n4. 🚀 **Deployment** - Precision implementation\n\nReady to upgrade your infrastructure? Click 'Get Quote' in the navigation or visit our Contact page to initiate your project!";
-        }
-        
-        // Contact Information
-        if (this.matchesPattern(query, ["contact", "reach", "email", "phone", "location"])) {
-            return "**Contact Swiftsync:**\n\n📍 Location: Kenya\n🌐 Operating globally with remote and on-site support\n\nVisit our Contact page to:\n• Send us a message\n• Request a consultation\n• Get a custom quote\n\nWe typically respond within 24 hours and offer 24/7 support for urgent issues.";
-        }
-        
-        // Company Info
-        if (this.matchesPattern(query, ["about", "company", "swiftsync", "who are you", "background"])) {
-            return `**About Swiftsync**\n\n${this.knowledge.company.tagline}\n\nFounded in ${this.knowledge.company.founded} and based in ${this.knowledge.company.location}, Swiftsync provides world-class IT solutions globally.\n\n**Our Mission:** ${this.knowledge.company.mission}\n\n**Key Stats:**\n• ${this.knowledge.stats.experience} of experience\n• ${this.knowledge.stats.projects}\n• ${this.knowledge.stats.uptime}\n\nWe've evolved from a solo operation to a powerhouse team of certified engineers and security specialists.`;
-        }
-        
-        // Thanks
-        if (this.matchesPattern(query, ["thank", "thanks", "appreciate"])) {
-            return "You're welcome! I'm here anytime you need assistance with IT solutions. Feel free to explore our services or reach out if you have more questions. Ready to synchronize with the future? 🚀";
-        }
-        
-        // Default response for unmatched queries
-        return "I'm here to help you learn about Swiftsync's services, team, and capabilities. You can ask me about:\n\n• Our six core services\n• The Swiftsync team\n• Our process and methodology\n• Technology stack\n• Getting started or pricing\n\nWhat would you like to know?";
-    }
+    // Load AI interface
+    loadAIInterface();
     
-    matchesPattern(query, keywords) {
-        return keywords.some(keyword => query.includes(keyword.toLowerCase()));
-    }
+    // Event listeners
+    aiTrigger.addEventListener('click', openAI);
+    
+    // Close on overlay click
+    aiModal.addEventListener('click', (e) => {
+        if (e.target === aiModal) closeAI();
+    });
+    
+    // ESC key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && aiModal.classList.contains('active')) {
+            closeAI();
+        }
+    });
 }
 
-// ===== CHAT INTERFACE LOGIC =====
-class ChatInterface {
-    constructor() {
-        this.ai = new SwiftsyncAI();
-        this.chatContainer = document.getElementById('chatContainer');
-        this.userInput = document.getElementById('userInput');
-        this.chatForm = document.getElementById('chatForm');
-        this.typingIndicator = document.getElementById('typingIndicator');
-        this.floatButton = document.getElementById('swiftsyncAI-button');
-        this.chatWindow = document.getElementById('swiftsyncAI-window');
-        this.closeBtn = document.getElementById('closeBtn');
-        this.minimizeBtn = document.getElementById('minimizeBtn');
-        
-        this.initializeEventListeners();
-    }
+function loadAIInterface() {
+    aiModal.innerHTML = `
+        <div class="ai-modal-content">
+            <div class="ai-container">
+                <div class="ai-header">
+                    <div class="ai-header-left">
+                        <div class="ai-avatar">
+                            <i class="material-icons">psychology</i>
+                            <span class="status-dot"></span>
+                        </div>
+                        <div class="ai-title">
+                            <h3>Swiftsync AI</h3>
+                            <span class="ai-status">Online • Ready to assist</span>
+                        </div>
+                    </div>
+                    <button class="ai-close" id="aiClose" aria-label="Close AI Assistant">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+
+                <div class="ai-quick-actions">
+                    <button class="quick-btn" data-query="What services does Swiftsync offer?">
+                        <i class="material-icons">hub</i>
+                        <span>Services</span>
+                    </button>
+                    <button class="quick-btn" data-query="Tell me about your team">
+                        <i class="material-icons">groups</i>
+                        <span>Team</span>
+                    </button>
+                    <button class="quick-btn" data-query="How can I contact you?">
+                        <i class="material-icons">contact_mail</i>
+                        <span>Contact</span>
+                    </button>
+                    <button class="quick-btn" data-query="What are your pricing options?">
+                        <i class="material-icons">paid</i>
+                        <span>Pricing</span>
+                    </button>
+                </div>
+
+                <div class="ai-chat-area" id="chatArea">
+                    <div class="ai-welcome">
+                        <div class="welcome-icon">
+                            <i class="material-icons">rocket_launch</i>
+                        </div>
+                        <h4>Welcome to Swiftsync AI</h4>
+                        <p>Your intelligent assistant for all things Swiftsync. Ask me about our services, team, or how we can help transform your IT infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="ai-input-area">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="userInput" 
+                            placeholder="Ask about services, pricing, support..." 
+                            rows="1"
+                            maxlength="500"
+                        ></textarea>
+                        <button class="send-btn" id="sendBtn" aria-label="Send message">
+                            <i class="material-icons">send</i>
+                        </button>
+                    </div>
+                    <div class="input-footer">
+                        <span class="char-count"><span id="charCount">0</span>/500</span>
+                        <span class="ai-badge">Powered by Swiftsync Neural Engine</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
     
-    initializeEventListeners() {
-        // Float button toggle
-        this.floatButton.addEventListener('click', () => this.toggleChat());
-        
-        // Close button
-        this.closeBtn.addEventListener('click', () => this.closeChat());
-        
-        // Minimize button
-        this.minimizeBtn.addEventListener('click', () => this.minimizeChat());
-        
-        // Form submission
-        this.chatForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.handleUserMessage();
-        });
-        
-        // Quick action buttons
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('quick-btn') || e.target.closest('.quick-btn')) {
-                const btn = e.target.classList.contains('quick-btn') ? e.target : e.target.closest('.quick-btn');
-                const query = btn.dataset.query;
-                this.sendMessage(query);
+    // Re-initialize elements after loading interface
+    setTimeout(initAIElements, 100);
+}
+
+function initAIElements() {
+    aiClose = document.getElementById('aiClose');
+    chatArea = document.getElementById('chatArea');
+    userInput = document.getElementById('userInput');
+    sendBtn = document.getElementById('sendBtn');
+    charCount = document.getElementById('charCount');
+    quickBtns = document.querySelectorAll('.quick-btn');
+    
+    if (aiClose) aiClose.addEventListener('click', closeAI);
+    if (sendBtn) sendBtn.addEventListener('click', sendMessage);
+    if (userInput) {
+        userInput.addEventListener('input', handleInput);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
             }
         });
     }
     
-    toggleChat() {
-        this.chatWindow.classList.toggle('active');
-        if (this.chatWindow.classList.contains('active')) {
-            this.chatWindow.classList.remove('minimized');
-            this.userInput.focus();
-        }
-    }
+    quickBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const query = btn.getAttribute('data-query');
+            userInput.value = query;
+            sendMessage();
+        });
+    });
+}
+
+function openAI() {
+    aiModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (userInput) userInput.focus();
+}
+
+function closeAI() {
+    aiModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function handleInput() {
+    const length = userInput.value.length;
+    charCount.textContent = length;
     
-    closeChat() {
-        this.chatWindow.classList.remove('active');
-    }
+    // Auto-grow textarea
+    userInput.style.height = 'auto';
+    userInput.style.height = userInput.scrollHeight + 'px';
+}
+
+function sendMessage() {
+    const message = userInput.value.trim();
+    if (!message) return;
     
-    minimizeChat() {
-        this.chatWindow.classList.toggle('minimized');
-    }
+    // Add user message
+    addMessage(message, 'user');
     
-    handleUserMessage() {
-        const message = this.userInput.value.trim();
-        if (!message) return;
-        
-        this.sendMessage(message);
-        this.userInput.value = '';
-    }
+    // Clear input
+    userInput.value = '';
+    charCount.textContent = '0';
+    userInput.style.height = 'auto';
     
-    sendMessage(message) {
-        // Remove welcome message if present
-        const welcomeMsg = this.chatContainer.querySelector('.welcome-message');
-        if (welcomeMsg) welcomeMsg.remove();
-        
-        // Add user message
-        this.addMessage(message, 'user');
-        
-        // Show typing indicator
-        this.showTyping();
-        
-        // Generate AI response with delay
-        setTimeout(() => {
-            const response = this.ai.generateResponse(message);
-            this.hideTyping();
-            this.addMessageWithTyping(response, 'ai');
-        }, 1000 + Math.random() * 1000); // Random delay 1-2 seconds
-    }
+    // Show typing indicator
+    showTypingIndicator();
     
-    addMessage(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}`;
-        
-        const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-        
-        messageDiv.innerHTML = `
-            <div class="message-avatar">
-                <span class="material-icons">${sender === 'ai' ? 'smart_toy' : 'person'}</span>
+    // Generate response
+    setTimeout(() => {
+        hideTypingIndicator();
+        const response = generateResponse(message);
+        addMessage(response, 'ai');
+    }, 1500);
+}
+
+// MODIFIED: Function to add message with typing effect for AI
+function addMessage(text, type) {
+    // Remove welcome message if exists
+    const welcome = chatArea.querySelector('.ai-welcome');
+    if (welcome) welcome.remove();
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${type}`;
+    
+    const time = new Date().toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit' 
+    });
+    
+    // If it's the User, show text immediately.
+    // If it's AI, leave it empty initially for the typing effect.
+    const content = type === 'user' ? text : '';
+    
+    messageDiv.innerHTML = `
+        <div class="message-avatar ${type}">
+            <i class="material-icons">${type === 'ai' ? 'psychology' : 'person'}</i>
+        </div>
+        <div class="message-content">
+            <div class="message-bubble ${type}">
+                ${content}
             </div>
-            <div class="message-content">
-                <div class="message-bubble">${this.formatMessage(text)}</div>
-                <div class="message-time">${time}</div>
-            </div>
-        `;
-        
-        this.chatContainer.appendChild(messageDiv);
-        this.scrollToBottom();
-    }
+            <span class="message-time">${time}</span>
+        </div>
+    `;
     
-    addMessageWithTyping(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}`;
-        
-        const time = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-        
-        const bubbleDiv = document.createElement('div');
-        bubbleDiv.className = 'message-bubble';
-        
-        messageDiv.innerHTML = `
-            <div class="message-avatar">
-                <span class="material-icons">smart_toy</span>
-            </div>
-            <div class="message-content">
-                <div class="message-bubble"></div>
-                <div class="message-time">${time}</div>
-            </div>
-        `;
-        
-        this.chatContainer.appendChild(messageDiv);
+    chatArea.appendChild(messageDiv);
+    chatArea.scrollTop = chatArea.scrollHeight;
+
+    // Trigger typing effect ONLY if it is an AI message
+    if (type === 'ai') {
         const bubble = messageDiv.querySelector('.message-bubble');
-        
-        // Typing animation
-        let i = 0;
-        const speed = 20; // ms per character
-        const typeWriter = () => {
-            if (i < text.length) {
-                bubble.innerHTML = this.formatMessage(text.substring(0, i + 1));
-                i++;
-                this.scrollToBottom();
-                setTimeout(typeWriter, speed);
-            }
-        };
-        
-        typeWriter();
-    }
-    
-    formatMessage(text) {
-        // Convert markdown-style formatting
-        text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
-        text = text.replace(/\n/g, '<br>'); // Line breaks
-        return text;
-    }
-    
-    showTyping() {
-        this.typingIndicator.classList.add('active');
-        this.scrollToBottom();
-    }
-    
-    hideTyping() {
-        this.typingIndicator.classList.remove('active');
-    }
-    
-    scrollToBottom() {
-        this.chatContainer.scrollTop = this.chatContainer.scrollHeight;
+        typeWriter(bubble, text, 0);
     }
 }
 
-// ===== INITIALIZE ON DOM LOAD =====
-document.addEventListener('DOMContentLoaded', () => {
-    new ChatInterface();
-});
+// NEW HELPER: Recursive function for typing animation
+function typeWriter(element, text, index) {
+    if (index < text.length) {
+        element.textContent += text.charAt(index);
+        chatArea.scrollTop = chatArea.scrollHeight; // Keep scrolling down as text grows
+        setTimeout(() => typeWriter(element, text, index + 1), 20); // Adjust speed (20ms) here
+    }
+}
+
+function showTypingIndicator() {
+    const indicator = document.createElement('div');
+    indicator.className = 'typing-indicator';
+    indicator.id = 'typingIndicator';
+    indicator.innerHTML = `
+        <div class="message-avatar ai">
+            <i class="material-icons">psychology</i>
+        </div>
+        <div class="typing-dots">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        </div>
+    `;
+    chatArea.appendChild(indicator);
+    chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+function hideTypingIndicator() {
+    const indicator = document.getElementById('typingIndicator');
+    if (indicator) indicator.remove();
+}
+
+function generateResponse(query) {
+    const lowerQuery = query.toLowerCase();
+    
+    // Check services
+    for (const [key, value] of Object.entries(swiftsyncKnowledge.services)) {
+        if (lowerQuery.includes(key)) {
+            return value;
+        }
+    }
+    
+    // Check team
+    for (const [key, value] of Object.entries(swiftsyncKnowledge.team)) {
+        if (lowerQuery.includes(key)) {
+            return value;
+        }
+    }
+    
+    // Check general questions
+    for (const [key, value] of Object.entries(swiftsyncKnowledge.general)) {
+        if (lowerQuery.includes(key)) {
+            return value;
+        }
+    }
+    
+    // Service-related keywords
+    if (lowerQuery.includes('service') || lowerQuery.includes('offer') || lowerQuery.includes('do')) {
+        return "Swiftsync offers comprehensive IT solutions including OS Architecture, Cybersecurity, Cloud & Network Services, Data Recovery, Hardware Operations, and 24/7 Intel Support. Which service would you like to know more about?";
+    }
+    
+    // Team-related
+    if (lowerQuery.includes('team') || lowerQuery.includes('who') || lowerQuery.includes('staff')) {
+        return "Our team consists of Seth Chenge (Founder & CEO), Purity Kyalo (Security Lead), and Webster Onsando (Cloud Architect). Together we bring 15+ years of experience and have deployed 500+ successful projects. Would you like to know more about any team member?";
+    }
+    
+    // Contact-related
+    if (lowerQuery.includes('contact') || lowerQuery.includes('reach') || lowerQuery.includes('email')) {
+        return "You can contact us through our contact page or reach out directly via email. We provide both remote and on-site support. Would you like to schedule a consultation?";
+    }
+    
+    // Default response
+    return "I'm here to help you learn about Swiftsync's services, team, and how we can assist with your IT needs. Feel free to ask about our OS architecture, cybersecurity solutions, cloud services, or anything else!";
+}
+
+// Auto-initialize if elements exist
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSwiftsyncAI);
+} else {
+    initSwiftsyncAI();
+}

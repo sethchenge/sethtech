@@ -8,6 +8,11 @@
     color: #e0e0e0; /* Brighter than muted */
 }
 
+/* Ensure Logo matches footer style (No Border) */
+.brand-logo {
+    border: none !important;
+}
+
 /* CSS Keyframe Animations */
 @keyframes fadeUp {
     from {
@@ -44,7 +49,8 @@
 
 /* ===== SERVICES HERO ===== */
 .services-hero {
-    padding: 150px 0 80px;
+    /* Increased top padding from 150px to 180px to fix spacing overlap */
+    padding: 180px 0 80px;
     position: relative;
     overflow: hidden;
 }

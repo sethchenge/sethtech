@@ -5,6 +5,11 @@
 .section-padding { padding: 100px 0; }
 .text-visible { color: #e0e0e0; line-height: 1.8; }
 
+/* Ensure Logo matches footer style (No Border) */
+.brand-logo {
+    border: none !important;
+}
+
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }

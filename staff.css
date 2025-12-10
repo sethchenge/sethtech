@@ -8,6 +8,11 @@
 .text-secondary { color: var(--secondary) !important; }
 .text-accent { color: var(--accent) !important; }
 
+/* Ensure Logo matches footer style (No Border) */
+.brand-logo {
+    border: none !important;
+}
+
 /* Animation Keyframes */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(40px); }

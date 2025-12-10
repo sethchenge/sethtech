@@ -1,6 +1,11 @@
 /* Import core variables */
 @import url('styles.css'); 
 
+/* Ensure Logo matches footer style (No Border) */
+.brand-logo {
+    border: none !important;
+}
+
 /* ===== CV LAYOUT ===== */
 .cv-wrapper {
     padding: 120px 0 80px;

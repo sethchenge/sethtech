@@ -97,7 +97,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
-    border: 2px solid var(--primary);
+    /* Removed border to match footer style */
+    object-fit: cover;
 }
 
 .brand-text {
@@ -216,8 +217,15 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== HERO SECTION ===== */
 .hero-section {
     position: relative;
-    padding-top: 80px;
+    padding-top: 150px; /* Increased from 80px to 150px to fix spacing */
     overflow: hidden;
+}
+
+/* Mobile check for spacing */
+@media (max-width: 768px) {
+    .hero-section {
+         padding-top: 130px; /* Still generous space for mobile */
+    }
 }
 
 .hero-badge {
